@@ -112,7 +112,7 @@
               <div class="text-center">
 
                 <v-btn color="primary" class="mr-2" @click="demo">Schedule a demo</v-btn>
-                <v-btn color="default" variant="outlined" class="ml-2">How it works</v-btn>
+                <v-btn color="default" variant="outlined" class="ml-2" href="/about">How it works</v-btn>
               </div>
 
 

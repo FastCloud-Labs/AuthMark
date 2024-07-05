@@ -1,0 +1,11 @@
+# place all worker configuration variables here
+
+name: authmark_detect
+faucet_url: https://faucet.edgenet.allora.network/
+worker:
+  boot_nodes: /dns4/head-0-p2p.edgenet.allora.network/tcp/32050/p2p/12D3KooWQgcJ4wiHBWE6H9FxZAVUn84ZAmywQdRk83op2EibWTiZ
+  chain_rpc_address: https://allora-rpc.edgenet.allora.network/
+  chain_topic_id: 1
+  mnemonic: ""
+  hex_coded_pk: ""
+  address: ""
