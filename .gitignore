@@ -162,4 +162,5 @@ cython_debug/
 #.idea/
 
 #Allora Keys
-Allora/worker/keys
+priv.bin
+priv.txt
