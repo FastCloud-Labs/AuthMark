@@ -17,6 +17,11 @@ topicid = "1" // integer
 cd authmark_detect/worker`
 
 
+mkdir -p authmark_detect/worker/data/head
+mkdir -p authmark_detect/worker/data/worker
+chmod -R 777 ./authmark_detect/worker/data/head
+chmod -R 777 ./authmark_detect/worker/data/worker
+
 
 # build from scratch
 

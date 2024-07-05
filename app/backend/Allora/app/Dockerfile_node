@@ -1,0 +1,21 @@
+# Pull base image
+FROM alloranetwork/allora-inference-base:latest
+
+# Copy requirements and install dependencies
+COPY requirements.txt /app/
+RUN pip3 install --requirement /app/requirements.txt
+
+# Copy the main application file
+COPY main.py /app/
+
+CMD ["allora-node", "--role=worker", \
+     "--peer-db=/data/peerdb", \
+     "--function-db=/data/function-db", \
+     "--runtime-path=/app/runtime", \
+     "--runtime-cli=bls-runtime", \
+     "--workspace=/data/workspace", \
+     "--private-key=/data/keys/priv.bin", \
+     "--log-level=debug", \
+     "--port=9011", \
+     "--topic=allora-topic-1-worker", \
+     "--boot-nodes=/ip4/{head-ip}/tcp/{head-port}/p2p/{head-id}"]
