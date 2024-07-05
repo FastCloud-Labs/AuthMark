@@ -1,5 +1,4 @@
 # AuthMark
-AuthMarks protects individuals and businesses against AI scams and crimes.
 
 ## dAGI Hackathon Categories
 
@@ -23,7 +22,8 @@ Adding digital watermarks, trojan horses and "poisoning" the data used to train 
 ### 2) Detection 
 Detection of fake content using AI models that can detect the subtle differences between real and synthetic content.
 
-### 3) Authenticity and OwnerShip and Verification
+### 3) Authenticity and Ownership and Verification & deAP (Decentralized Authenticity Protocol)
+
 
 
 ### Feature
