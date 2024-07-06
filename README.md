@@ -1,6 +1,8 @@
 # AuthMark
 
+<p align="center">
 ![Auth Mark](app/frontend/src/assets/logo.png)
+</p>
 
 ## dAGI Hackathon Categories
 
