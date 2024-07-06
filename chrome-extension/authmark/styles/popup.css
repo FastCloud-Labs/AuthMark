@@ -1,0 +1,390 @@
+header.header {
+  background-color: #feffff;
+  padding: 10px;
+  position:fixed;
+  top:0;
+  left:0;
+  height:50px;
+  width:100%
+}
+footer.footer {
+  background-color:var(--color-bg);
+  padding: 10px;
+  position:fixed;
+  bottom:0;
+  left:0;
+  height:90px;
+  width:100%;
+  text-align: center;
+}
+footer.footer img{
+  top: 3px;
+  position: relative;
+}
+
+header.header a:hover,
+footer.footer a:hover{
+  text-decoration: none;
+}
+footer.footer a{
+  margin-left:10px;
+}
+
+.headerLogo{
+  display:inline-block;
+  width:fit-content;
+  float:left;
+}
+.headerLogo img {
+  width: 44px;
+  height: auto;
+}
+.headerLogo a{
+  color:#000;
+}
+.headerLogo a span{
+  position: relative;
+  top: -12px;
+  left: 5px;
+  font-size:26px;
+}
+
+.headerRight{
+  display:inline-block;
+  width:fit-content;
+  float:right;
+  margin-right:10px;
+}
+
+.header-button {
+  border-radius: 50%;
+  font-size: 14px;
+  height:28px;
+  /* margin: auto; */
+  /* min-width: 27px; */
+  width: 28px;
+  /* padding-left: 2px; */
+  overflow: hidden;
+  box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24);
+  background-color: rgb(59, 114, 255);
+  margin-right: 10px;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.header-button .far,
+.header-button .fas{
+  font-size:14px;
+  border:none;
+  color:#fff;
+  margin:0;
+  padding:0;
+  line-height: 28px;
+}
+
+.learnMoreButton {
+  transition: none;
+  left: 21px;
+  margin-top: 4px;
+  background: #00211d;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.8em;
+}
+
+.learnMoreButton:hover {
+  background: #41b178;
+  text-decoration: none;
+}
+
+.startMeetButton:hover {
+  background: #41b178;
+  text-decoration: none;
+}
+
+/* Feature List */
+.subHeading {
+  margin: 10px;
+  font-weight: bold;
+}
+
+#featureList {
+  display: inline;
+}
+
+#basicFeatures {
+  display: inline;
+  width: 400px;
+}
+
+#proUpgrade {
+  display: inline;
+  width: 400px;
+  float: right;
+}
+
+
+.container {
+  display: flex;
+  background: #feffff;
+  padding: 10px 30px;
+  margin-bottom: 2px;
+}
+
+.newFeature {
+  /* position: absolute; */
+  display: inline;
+  margin-right: 15px;
+  float: right;
+  background: red;
+  border-radius: 10px;
+  color: white;
+  font-weight: 100;
+  padding: 0px 4px 0px 4px;
+  font-size: 10px;
+  margin-top: 1px;
+}
+
+
+/* Feature Items */
+.multiItemContainer {
+  margin-top: 4px;
+}
+
+.multiItemContainer > div {
+  display: inline;
+}
+
+.multiItemContainer > .right {
+  float: right;
+}
+
+.item {
+  display: flex;
+  align-items: baseline;
+}
+
+.item img {
+  width: 32px;
+}
+
+.item:nth-child(2) {
+  display: inline-block;
+  flex-grow: 1;
+  margin-left: 14px;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+  position: absolute;
+  top: 135%;
+  left: 50%;
+  margin-left: -60px;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.keyBinding {
+  display: block;
+  padding: 5px 10px;
+  width: 100px;
+  margin: 0 10px 0 0;
+  cursor: pointer;
+  font-size: 10px;
+  margin-right: 10px;
+  background: #f5f6f7 !important;
+  border: 1px solid #c4c5c6;
+  text-align: left;
+  color: var(--color-text-secondary);
+  height: 30px;
+}
+
+#editHotkey {
+  display: block;
+  background: #00211d;
+}
+
+#saveHotkey {
+  display: none;
+  background: #eab4b4;
+}
+
+.hotkeyButton {
+  text-decoration: none !important;
+  position: absolute;
+  right: 14px;
+  top: 2px;
+  color: white;
+  width: 24px;
+  padding: 0;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.keyBinding:hover {
+  filter: none !important;
+}
+
+[data-active="true"] {
+  border: 2px solid #eab4b4;
+}
+
+.noHover:hover {
+  border: none;
+}
+
+#backgroundColorPicker {
+   padding: 2px;
+  margin-right: 6px;
+}
+
+#borderColor {
+  padding: 2px;
+  margin-right: 6px;
+}
+
+.d-none{
+  display:none;
+}
+
+.form-switch {
+  display: inline-block;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  margin-bottom: 10px;
+  display: flex;
+  margin-bottom: 0;
+  align-items: center;
+}
+
+.form-switch i {
+  position: relative;
+  display: inline-block;
+  margin-right: .5rem;
+  width: 46px;
+  height: 26px;
+  background-color: #e6e6e6;
+  border-radius: 23px;
+  vertical-align: text-bottom;
+  transition: all 0.3s linear;
+}
+
+.form-switch i::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 42px;
+  height: 22px;
+  background-color: #fff;
+  border-radius: 11px;
+  transform: translate3d(2px, 2px, 0) scale3d(1, 1, 1);
+  transition: all 0.25s linear;
+}
+
+.form-switch i::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  border-radius: 11px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24);
+  transform: translate3d(2px, 2px, 0);
+  transition: all 0.2s ease-in-out;
+}
+
+.form-switch:active i::after {
+  width: 28px;
+  transform: translate3d(2px, 2px, 0);
+}
+
+.form-switch:active input:checked + i::after { transform: translate3d(16px, 2px, 0); }
+
+.form-switch input { display: none; }
+
+.form-switch input:checked + i { background: rgb(59, 114, 255);
+background: linear-gradient(90deg, #478fec 35%, rgba(8, 50, 187, 0.62) 100%); }
+
+.form-switch input:checked + i::before { transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0); }
+
+.form-switch input:checked + i::after { transform: translate3d(22px, 2px, 0); }
+
+.spacer5, .spacer10, .spacer15, .spacer64 {
+  width: 100%;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: block;
+}
+
+.spacer5 {
+  height: 5px;
+}
+
+.spacer10 {
+  height: 10px;
+}
+
+.spacer15 {
+  height: 15px;
+}
+
+.spacer74 {
+    height: 74px;
+}
+
+.spacer64 {
+  height: 64px;
+}
+.spacer100 {
+  height: 100px;
+}
+#settings-card{
+  background-color:#feffff;
+}
+footer.footer a.teaser {
+    display: block;
+    height: 50px;
+    margin:10px 20px;
+    color: #212529;
+    background-color: #fec107;
+    border-color: #c69500;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius:3px;
+  }
+  
+  footer.footer a.teaser:hover{
+    color: #212529;
+    background-color: #e0a800;
+    border-color: #d39e00;
+  }
+
+  .teaser .five-stars{
+    font-size:43px;
+    line-height:10px;
+  }

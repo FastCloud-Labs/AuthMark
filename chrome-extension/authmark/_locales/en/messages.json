@@ -1,0 +1,29 @@
+{
+   "AppDesc": {
+      "message": "Add Authenticity watermarking to your calls, detect fake media and more."
+   },
+   "AppName": {
+      "message": "AuthMark"
+   },
+   "InMeetingPlugin": {
+      "message": "Call Authenticity water marking"
+   },
+   "InMeetingPluginDisabled": {
+      "message": "Call Authenticity water marking disabled"
+   },
+   "ftr_31": {
+      "message": "Enable AuthMark"
+   },
+   "ftr_31_1": {
+      "message": "Add Authenticity watermarking to your calls, and protect yourself against AI generated deepfakes, voice cloning and misinformation."
+   },
+   "falseInfo": {
+      "message": "Alert if mis/dis-information is detected"
+   },
+   "ftr_31_3": {
+      "message": "Load more..."
+   },
+   "ftr_31_4": {
+      "message": "more.."
+   }
+}

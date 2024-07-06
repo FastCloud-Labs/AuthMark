@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title data-i18n="AppName"></title>
+    <link rel="stylesheet" type="text/css" href="/styles/webfonts.css"/>
+    <link rel="stylesheet" type="text/css" href="/styles/fontawessome.css"/>
+    <link rel="stylesheet" type="text/css" href="/styles/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/body.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/popup.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="headerLogo">
+        <a target="_blank" id="home-page" href="#">
+          <img src="/images/icon48.png" />
+          <span data-i18n="AppName"></span>
+        </a>
+      </div>
+      <div class="headerRight">
+        <a id="reactions-settings" target="_blank" class="header-button" href="#">
+          <i class="fas fa-cogs fa-w-18 fa-lg"></i>
+        </a>
+        <a id="reactions-settings-back" class="header-button d-none" href="#" title="Settings">
+          <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
+    </header>
+    <div class="spacer74"></div>
+    <div class="card-deck">
+      <div id="main-card" class="card">
+        <div class="card-body">
+          <div id="featureList">
+            <div id="basicFeatures">
+              
+              <!-- Virtual Background -->
+              <div class="container">
+                <div class="item">
+                </div>
+                <div class="item">
+                  <label data-i18n="ftr_31">Blur Background</label>
+                  <small data-i18n="ftr_31_1">Adds set of predefined backgrounds to the set background window</small>
+                </div>
+                <div class="item">
+                  <input type="checkbox" id="virtualBg" />
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="settings-card" class="card d-none" >
+        <div class="card-body">
+            <label class="form-switch"
+                   style="display: flex; align-items: left; justify-content: left; margin-top: 0; margin-left: 40px;">
+                <input type="checkbox" id="sidebarIsOn" checked>    
+                <i></i>
+                <h3 data-i18n="InMeetingPlugin">
+                    
+                </h3>
+            </label>
+            <label class="form-switch"
+                   style="display: flex; align-items: left; justify-content: left; margin-top: 0; margin-left: 40px;">
+                <input type="checkbox" id="sidebarIsOn" checked>
+                <i></i>
+                <h3 data-i18n="FalseInfo">
+
+                </h3>
+            </label>
+        </div>
+      </div>
+
+    </div>
+
+
+    
+    
+    <script src="/scripts/config.js"></script>
+    <script src="/scripts/hotKey.js"></script>
+    <script src="/scripts/common.js"></script>
+    <script src="/scripts/popup.js"></script>
+    <script src="/scripts/Localization.js"></script>
+  </body>
+</html>

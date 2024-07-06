@@ -1,0 +1,55 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "background": {
+    "service_worker": "/js/bg-worker.js"
+  },
+  "container": [
+    "GOOGLE_DRIVE"
+  ],
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/common.js",
+        "scripts/browser-polyfill.js",
+        "scripts/config.js",
+        "scripts/sidebar.js"
+      ],
+      "matches": [
+        "*://meet.google.com/*"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "default_locale": "en",
+  "description": "__MSG_AppDesc__",
+  "homepage_url": "https://authmark.org",
+  "icons": {
+    "128": "images/icon128.png",
+    "16": "images/icon16.png",
+    "48": "images/icon48.png"
+  },
+  "manifest_version": 3,
+  "name": "__MSG_AppName__",
+  "permissions": [
+    "storage"
+  ],
+  "version": "0.0.1",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "/styles/*",
+        "/images/*",
+        "/webfonts/*",
+        "/scripts/*"
+      ],
+      "matches": [
+        "\u003Call_urls\u003E"
+      ]
+    }
+  ],
+  "action": {
+    "default_icon": "images/icon128.png",
+    "default_popup": "ui/popup.html"
+  }
+}
