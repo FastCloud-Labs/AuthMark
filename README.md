@@ -1,3 +1,7 @@
+<p align="center">
+<img src="app/frontend/src/assets/logo.png" alt="AuthMark Logo"/>
+</p>
+
 # AuthMark
 
 ## dAGI Hackathon Categories
