@@ -245,25 +245,13 @@ transition: fade-out
 transition: fade-out
 ---
 
-# Solution explored during hackathon
+## Solution explored during hackathon
 
-1) Preventative Protection
+1) Preventative protection
 
-    - AI models to generate Digital watermarking /poisoning using Allora for ongoing iterations & collaborative
-      improvements
+2) DeepFake & synthetic content detection
 
-2) Detection
-
-    - AI models to detect synthetic content using Allora for ongoing iterations & collaborative improvements
-    - Centralized aggregate of verified misinformation
-        - x/twitter notes
-        - British Broadcasting Corporation (BBC Verify)
-
-3) Proof of Authenticity and Ownership
-
-    - AI digital watermarking
-    - Secure font "AuthMarkFont" (digital watermarked fonts)
-    - Decentralized Proof of Life and Authenticity Protocol (dePoAP)
+3) Proof of authenticity & Proof of Life using our Decentralized Proof of Authenticity Protocol (dePoAP)
 
 <div class="abs-br mr-6 mb-1">
       <span
@@ -290,7 +278,7 @@ transition: fade-out
 transition: fade-out
 ---
 
-## Preventative Protection
+## 1) Preventative Protection
 
 1) Intentional "AI Poisoning" Inspired by "Nightshade" modifies pixels in a minimal way not perceived by the human eye ,
    misleads AI scrapers and generators.
@@ -337,11 +325,11 @@ transition: fade-out
 <br>
 1. Change sometimes are noticeable and not suitable for hi-res images/video
 
-2. Easy for AI scapers/generators to adapt their models to mitigate
+2. Easy for AI scrapers/generators to adapt their models to mitigate
 3. Cat and mouse game between good actors and bad actors
 
 <div class="text-center mt-7">
-<b>Verdict:</b> Not a viable option, limited use cases easy to mitigate
+<b>Verdict:</b> Not a viable option, limited use cases easy to mitigate never ending Cat and mouse game between good actors and bad actors
 <div class="flex justify-center items-center ma-2">
 <img width="320" height="400" src ="/cat-mouse.gif"/><br>
 </div>
@@ -367,89 +355,22 @@ transition: fade-out
 
 </div>
 
-
+---
+transition: fade-out
 ---
 
-# Diagrams
+## 2.1) Deep Fake and Synthetic Content Detection
 
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
+There are a dozen of models both open source and proprietary that can detect deep fakes and synthetic content,
+however in a rapdily developing landscape many are no longer effective.
 
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
+For deepfake detection models to be effective they require on going collaborative iterations which is why we integrated
+with Allora:
 
-```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
 
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectiveness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
+<div class="flex justify-center items-center ma-2">
+<img width="600" src ="/allora.png"/><br>
 </div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
-<div class="page">
-<div class="abs-br mr-6 mb-1 text-xs left-6 pa-2">
-    <a href="https://authmark.org" target="_blank">AuthMark.org</a>
-  </div>
 
 
 <div class="abs-br mr-6 mb-1">
@@ -470,6 +391,147 @@ database "MySql" {
     </span>
 
 </div>
+
+---
+transition: fade-out
+---
+
+## 2.2) Aggregate of verified misinformation
+
+X/Twitter community notes & British Broadcasting Corporation (BBC Verify) are good examples of verifying misinformation,
+by aggregating a wide range of "verified misinformation" sources, we can create a more effective AI model.
+
+Users simply install the "AuthMark Chrome extension" which will search website pages in realtime for misinformation and
+synthetic content.
+
+// todo add Chrome extension demo/sceenshots
+
+
+
+<div class="flex justify-center items-center ma-2">
+<img width="600" src ="/chrome-extension-mis-information.png"/><br>
+</div>
+
+
+<div class="abs-br mr-6 mb-1">
+      <span
+      @click="$slidev.nav.prev"
+      class="arrow-container cursor-pointer text-white"
+      hover="bg-altBlue bg-opacity-75 text-white"
+    >
+      <carbon:chevron-left class="inline" />
+    </span>
+    {{ $slidev.nav.currentPage }} / {{ $slidev.nav.total }}
+    <span
+      @click="$slidev.nav.next"
+      class="arrow-container cursor-pointer text-white"
+      hover="bg-altBlue bg-opacity-75 text-white"
+    >
+      <carbon:chevron-right class="inline" />
+    </span>
+
+</div>
+
+
+
+---
+transition: fade-out
+---
+
+## 3) Proof of authenticity & Proof of Life
+
+Previously mentioned solutions will always have an element of cat and mouse game between good actors and bad actors,
+therefore we
+believe Proof of authenticity & Proof of Life are the only real, effective and long term solution, which is why we
+decided to focus on developing a <b>Proof Authenticity Protocol (dePoAP)</b>
+
+Features:
+
+- AI digital watermarking (methods for video, audio,images and documents)
+- Secure font "AuthMarkFont" (digital watermarked fonts)
+- Decentralized Proof of Life and Authenticity Protocol (dePoAP)
+- Reverse proxy for dynamic content delivery and status updates
+
+We use Naptha.AI and Marlin for the following:
+
+1) Decentralised key pair for Proof of Life: public key stored on chain, private key is only created on device, access
+   to both is required to create and Proof of Authentication.
+2) An immutable and verifiable record of all "Authenticated Proof" stored on chain to verify content, this could also be
+   paired with an IPFS for some use cases.
+
+<div class="abs-br mr-6 mb-1">
+      <span
+      @click="$slidev.nav.prev"
+      class="arrow-container cursor-pointer text-white"
+      hover="bg-altBlue bg-opacity-75 text-white"
+    >
+      <carbon:chevron-left class="inline" />
+    </span>
+    {{ $slidev.nav.currentPage }} / {{ $slidev.nav.total }}
+    <span
+      @click="$slidev.nav.next"
+      class="arrow-container cursor-pointer text-white"
+      hover="bg-altBlue bg-opacity-75 text-white"
+    >
+      <carbon:chevron-right class="inline" />
+    </span>
+
+</div>
+
+---
+transition: fade-out
+---
+
+## Demo
+
+<div class="abs-br mr-6 mb-1">
+      <span
+      @click="$slidev.nav.prev"
+      class="arrow-container cursor-pointer text-white"
+      hover="bg-altBlue bg-opacity-75 text-white"
+    >
+      <carbon:chevron-left class="inline" />
+    </span>
+    {{ $slidev.nav.currentPage }} / {{ $slidev.nav.total }}
+    <span
+      @click="$slidev.nav.next"
+      class="arrow-container cursor-pointer text-white"
+      hover="bg-altBlue bg-opacity-75 text-white"
+    >
+      <carbon:chevron-right class="inline" />
+    </span>
+
+</div>
+
+
+
+---
+
+<!-- 
+Vision 
+-->
+
+<div class="page">
+<div class="abs-br mr-6 mb-1 text-xs left-6 pa-2">
+    <a href="https://authmark.org" target="_blank">AuthMark.org</a>
+  </div>
+
+## Business Model
+
+Powered By nevermined
+
+
+<div class="abs-br mr-6 mb-1">
+      <span
+      @click="$slidev.nav.prev"
+      class="arrow-container cursor-pointer text-white"
+      hover="bg-altBlue bg-opacity-75 text-white"
+    >
+      <carbon:chevron-left class="inline" />
+    </span>
+    {{ $slidev.nav.currentPage }} / {{ $slidev.nav.total }}
+
+</div>
 </div>
 
 
@@ -486,16 +548,16 @@ Vision
 
 ## Vision
 
-<p>Just like firewalls ans antivirus software, protection against synthetic ai threats &/ verifying inofrmations (mis/dis)
-Authmark is positioned to be a must have tool for the future from individuals to big businesses.
-</p>
+We believe in free speech and privacy therefore authenticating Proof of Life & Proof of Authenticity should be owned and
+controled by users not big tech.
+
+<p>Firewalls and Anti-virus software are important tools to protect against cyber crime.</p>
+<p>Authmark is positioning itself to be a must have tool to protect businesses and citizens against the next generation malicious AI threats.</p>
 
 <div class="flex justify-center items-center pa-6">
   <img width="250" height="250" src ="/hero-2.png"/><br>
 </div>
 
-We believe in free speech and privacy therefore authenticating Proof if life, voice and deepfakes should be
-decentralised and user owned not by big tech.
 
 <div class="abs-br mr-6 mb-1">
       <span
