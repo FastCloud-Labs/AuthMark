@@ -83,7 +83,6 @@
         <h2>Proof of life test</h2>
         <ProofOfLife/>
         <br>
-        <v-btn @click="showPOL = false">Exit</v-btn>
       </div>
     </v-main>
   </v-layout>

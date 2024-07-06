@@ -1,7 +1,17 @@
 <template>
   <div class="pa-1">
-    <p class="pb-1">Action Instruction: <span id="instruction">{{ actionInstruction }}</span></p>
-    <v-row>
+    <div v-if="faceCompleted && handCompleted">
+      Proof of Life Completed
+      <v-img src="@/assets/hero-2.png" max-height="400" max-width="300" class="mt-8"></v-img>
+    </div>
+    <div v-else-if="faceCompleted">
+      Point to the green dot to complete the Proof of Life.
+    </div>
+    <div v-else>
+      Action Instruction: <span id="instruction">{{ actionInstruction }}</span>
+    </div>
+
+    <v-row v-if="!handCompleted">
       <v-col cols="6">
         <video id="my_video" ref="video" width="300" height="300" autoplay></video>
       </v-col>
@@ -10,14 +20,25 @@
         <canvas id="output_canvas_hand" ref="outputCanvas" :height="200" :width="200"></canvas>
       </v-col>
       <v-col cols="12">
-        <v-btn @click="showDot" color="primary">showDot</v-btn>
-        <br>
 
-        // todo change to progress bar and generate local certificate
-        // replace alert with sound
-        <p>Completed Action Count: <span id="actionCount">{{ completedActionCount }}</span></p>
-
-        <div id="gesture_output" ref="gestureOutput"></div>
+        <div class="pol-progress" v-if="!faceCompleted">
+          <v-progress-linear
+            color="light-blue"
+            height="20"
+            :model-value="completedActionCount * 2"
+            width="200"
+            striped
+          ></v-progress-linear>
+        </div>
+        <div class="pol-progress" v-else>
+          <v-progress-linear
+            color="light-green"
+            height="20"
+            :model-value="handCompletedSteps * 2"
+            width="200"
+            striped
+          ></v-progress-linear>
+        </div>
       </v-col>
     </v-row>
   </div>
@@ -57,6 +78,12 @@ export default {
       dotInProgress: false,
       randomnumber1: 0,
       randomnumber2: 0,
+      completedSteps: 25,
+      faceCompleted: false,
+      handCompleted: false,
+      handCompletedSteps: 0,
+      stepAudio: new Audio('/step-done.mp3'),
+      completeAudio: new Audio('/complete.mp3')
     };
   },
   methods: {
@@ -117,18 +144,24 @@ export default {
         if ((angle[2] < -90 || angle[2] > 90) && (angle[1] > -30 && angle[1] < 30)) {
           flag = true;
         }
-      } else if (this.currentActionType === 3) {
+      } else {
         const angle = this.getPoint5Angle(this.getPoint5(realLandmarks));
-        if ((angle[1] < -30 || angle[1] > 30) && (angle[2] > -30 && angle[2] < 30)) {
+        if ((angle[2] < -90 || angle[2] > 90) && (angle[1] > -30 && angle[1] < 30)) {
           flag = true;
         }
       }
+      if (this.completedActionCount > this.completedSteps) {
+        this.faceCompleted = true;
+        this.hideDot = false;
+        this.showDot()
+      }
 
-      if (flag) {
-        alert("Detected");
+      if (flag && !this.faceCompleted) {
+        this.stepAudio.play();
         this.currentActionType = -1;
         this.completedActionCount += 1;
         this.actionInstruction = "Please wait...";
+
         setTimeout(() => {
           this.actionInstruction = this.actionType[this.currentActionType];
         }, 2000);
@@ -295,20 +328,21 @@ export default {
         this.canvasHandCtx.fill();
       }
 
-
-      const gestureOutput = this.$refs.gestureOutput;
       if (this.results.gestures.length > 0) {
-        gestureOutput.style.display = "block";
-        gestureOutput.style.width = this.videoWidth;
         const {categoryName, score} = this.results.gestures[0][0];
-        const handedness = this.results.handednesses[0][0].displayName;
-        gestureOutput.innerText = `GestureRecognizer: ${categoryName}\nConfidence: ${parseFloat(score * 100).toFixed(2)}%\nHandedness: ${handedness}`;
-        if (categoryName === "Pointing_Up") {
-          this.showDot()
+        if (categoryName === "Pointing_Up" && this.faceCompleted && !this.handCompleted) {
+          window.setTimeout(() => {
+
+            this.handCompletedSteps += 1;
+            if (this.handCompletedSteps > 60) {
+              this.handCompleted = true
+              this.completeAudio.play();
+            }
+            this.showDot();
+          }, 2000);
         }
-      } else {
-        gestureOutput.style.display = "none";
       }
+
 
       if (this.webcamRunning) {
         window.requestAnimationFrame(this.predictWebcam.bind(this));
@@ -318,26 +352,21 @@ export default {
       return Math.random() * (max - min) + min;
     },
     showDot() {
-
-      this.hideDot = false
-
-      if (this.dotInProgress) {
-        console.log('Action already in progress');
-
-        return;
+      if (!this.handCompletedSteps && this.faceCompleted) {
+        this.hideDot = false
+        this.dotInProgress = true
+        window.setTimeout(() => {
+          this.dotInProgress = false;
+          this.randomnumber1 = this.randomNumber(50, 180);
+          this.randomnumber2 = this.randomNumber(10, 80);
+          this.stepAudio.play();
+        }, 5000);
+        if (this.handCompletedSteps > 20) {
+          this.hideDot = true
+          this.handCompleted = true
+          this.completeAudio.play();
+        }
       }
-
-      this.dotInProgress = true
-
-
-      window.setTimeout(() => {
-
-        this.dotInProgress = false;
-
-        this.randomnumber1 = this.randomNumber(50, 180);
-        this.randomnumber2 = this.randomNumber(10, 80);
-      }, 2000);
-
 
     },
     collision({box1, box2}) {
@@ -384,5 +413,16 @@ canvas#output_canvas_hand {
 
 .v-col.v-col-6 {
   max-height: 400px;
+}
+
+.pol-progress {
+  max-width: 400px;
+  margin: auto;
+}
+
+.v-progress-linear.v-progress-linear--active.v-progress-linear--striped.v-theme--dark.v-locale--is-ltr {
+  border: 1px solid #fff;
+  border-radius: 10px;
+  height: 20px !important;
 }
 </style>
