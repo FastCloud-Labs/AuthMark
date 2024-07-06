@@ -22,8 +22,8 @@
           individuals and businesses against A.I scams and crimes</h2>
         <div class="py-2"/>
         <v-divider class="py-3"/>
-        <h2 class="text-center">Advanced AI watermarking, tracking + Decentralized Authenticity
-          Protocol (DeAP)</h2>
+        <h2 class="text-center">Decentralized Proof of Life and Proof of Authenticity Protocol (dePoAP)
+          to protecting against malicious AI (Deepfakes, voice cloning, disinformation)</h2>
         <div class="py-3"/>
         <v-row>
 
@@ -111,8 +111,8 @@
 
               <div class="text-center">
 
-                <v-btn color="primary" class="mr-2" @click="demo">Schedule a demo</v-btn>
-                <v-btn color="default" variant="outlined" class="ml-2">How it works</v-btn>
+                <v-btn color="primary" class="mr-2" href="/demos">Demo</v-btn>
+                <v-btn color="default" variant="outlined" class="ml-2" href="/how-it-works">How it works</v-btn>
               </div>
               <v-img
                 class="img-r"
@@ -170,6 +170,7 @@
         </v-row>
 
       </div>
+
 
       <v-row>
         <v-col cols="12">
