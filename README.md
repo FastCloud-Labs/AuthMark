@@ -1,7 +1,7 @@
 # AuthMark
 
 <p align="center">
-![Auth Mark](app/frontend/src/assets/logo.png)
+<img src="app/frontend/src/assets/logo.png" alt="AuthMark Logo"/>
 </p>
 
 ## dAGI Hackathon Categories
