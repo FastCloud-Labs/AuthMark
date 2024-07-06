@@ -1,0 +1,15 @@
+/* style.css */
+html, div, body {
+    color: #fff;
+}
+
+
+a:hover {
+    color: #42a2ff !important;
+}
+
+.slidev-layout {
+    height: 100%;
+    background: linear-gradient(180deg, rgba(1, 1, 1, 50%), rgb(6 23 68 / 90%)), url(/bg.png) !important
+}
+
