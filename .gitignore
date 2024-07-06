@@ -161,6 +161,18 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-#Allora Keys
+#Allora
 priv.bin
 priv.txt
+.DS_Store
+__pycache__
+*.pyc
+.lake_cache/*
+logs/*
+.env
+keys
+data
+inference-data
+worker-data
+head-data
+lib

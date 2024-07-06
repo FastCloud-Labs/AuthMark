@@ -2,15 +2,7 @@
 
 ## dAGI Hackathon Categories
 
-#### AI-Powered Decentralized Content Authenticator
-
-A platform that uses AI to detect and validate the authenticity of digital content, leveraging blockchain for immutable
-record-keeping of content provenance and creator reputation, thus combating fake news and copyright infringement.
-
-### Fake content detection and validation
-
-The cost of generating fake text, images, video, and voice is dropping, making this problem more acute than rogue AGI.
-Cryptographic content authentication and decentralized creator reputation can help solve this problem globally.
+An AI-driven platform using blockchain for secure content verification and immutable records, combating fake news and malicious synthetic AI media ( deepfakes, voice cloning, disinformation).
 
 ## Problems
 
