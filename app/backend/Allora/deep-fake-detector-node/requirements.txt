@@ -1,0 +1,11 @@
+flask[async]
+gunicorn[gthread]
+numpy
+pandas
+Requests==2.32.0
+scikit_learn==1.3.2
+Pillow
+facenet-pytorch
+torch
+opencv-python
+grad-cam
