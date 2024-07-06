@@ -38,7 +38,7 @@ def generate_inference(frameID):
 
     try:
         inference = get_eth_inference()
-        return Response( "AuthMark: #"+frameID+ " "+ str(inference), status=200)
+        return Response(json.dumps({"real": inference.real,"fake": inference.fake}), status=500, mimetype='application/json')
     except Exception as e:
         return Response(json.dumps({"error": str(e)}), status=500, mimetype='application/json')
 

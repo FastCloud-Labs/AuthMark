@@ -10,7 +10,7 @@ from pytorch_grad_cam import GradCAM
 from pytorch_grad_cam.utils.model_targets import ClassifierOutputTarget
 from pytorch_grad_cam.utils.image import show_cam_on_image
 
-with zipfile.ZipFile("examples.zip","r") as zip_ref:
+with zipfile.ZipFile("frames.zip","r") as zip_ref:
     zip_ref.extractall(".")
 
 DEVICE = 'cuda:0' if torch.cuda.is_available() else 'cpu'
@@ -83,19 +83,4 @@ def predict(input_image:Image.Image, true_label:str):
             'real': real_prediction,
             'fake': fake_prediction
         }
-    return confidences, true_label, face_with_mask
-
-interface = gr.Interface(
-    fn=predict,
-    inputs=[
-        gr.components.Image(label="Input Image", type="pil"),  # Updated component import and type
-        gr.components.Text(label="Your Text Input")  # Updated component import
-    ],
-    outputs=[
-        gr.components.Label(label="Class"),  # Updated component import
-        gr.components.Text(label="Your Text Output"),  # Updated component import
-        gr.components.Image(label="Face with Explainability", type="numpy")  # Updated component import and type
-    ],
-    examples=[[examples[i]["path"], examples[i]["label"]] for i in range(10)],
-    cache_examples=True  # Adjusted according to the new parameter for caching examples if needed
-).launch()
+    return confidences
