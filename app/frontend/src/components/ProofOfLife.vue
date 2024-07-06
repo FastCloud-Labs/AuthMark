@@ -54,6 +54,7 @@ export default {
       webcamRunning: false,
       webcamButtonText: "ENABLE PREDICTIONS",
       hideDot: true,
+      dotInProgress: false,
       randomnumber1: 0,
       randomnumber2: 0,
     };
@@ -302,6 +303,9 @@ export default {
         const {categoryName, score} = this.results.gestures[0][0];
         const handedness = this.results.handednesses[0][0].displayName;
         gestureOutput.innerText = `GestureRecognizer: ${categoryName}\nConfidence: ${parseFloat(score * 100).toFixed(2)}%\nHandedness: ${handedness}`;
+        if (categoryName === "Pointing_Up") {
+          this.showDot()
+        }
       } else {
         gestureOutput.style.display = "none";
       }
@@ -314,9 +318,27 @@ export default {
       return Math.random() * (max - min) + min;
     },
     showDot() {
+
       this.hideDot = false
-      this.randomnumber1 = this.randomNumber(50, 180);
-      this.randomnumber2 = this.randomNumber(10, 80);
+
+      if (this.dotInProgress) {
+        console.log('Action already in progress');
+
+        return;
+      }
+
+      this.dotInProgress = true
+
+
+      window.setTimeout(() => {
+
+        this.dotInProgress = false;
+
+        this.randomnumber1 = this.randomNumber(50, 180);
+        this.randomnumber2 = this.randomNumber(10, 80);
+      }, 2000);
+
+
     },
     collision({box1, box2}) {
       return box1.position.x + box1.width >= box2.position.x
@@ -359,6 +381,7 @@ canvas#output_canvas_hand {
   border-radius: 100%;
   transform: rotateY(180deg);
 }
+
 .v-col.v-col-6 {
   max-height: 400px;
 }

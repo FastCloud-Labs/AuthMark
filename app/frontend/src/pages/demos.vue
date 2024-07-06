@@ -42,11 +42,7 @@
         </v-list-item>
         <v-list-item @click="showPOL = true">
           <v-icon icon="mdi-play-network"></v-icon>
-          Secure Video/Audio
-        </v-list-item>
-        <v-list-item @click="showPOL = true">
-          <v-icon icon="mdi-file-check-outline"></v-icon>
-          Secure Documents/Images
+          Authenticate Content
         </v-list-item>
         <v-list-item @click="showPOL = true">
           <v-icon icon="mdi-text-shadow"></v-icon>
