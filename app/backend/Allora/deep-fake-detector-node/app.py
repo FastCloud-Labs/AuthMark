@@ -17,16 +17,14 @@ def download_frames():
     train_model()
 
 
-def get_eth_inference():
+def get_inference():
     """Load model and predict current price."""
     with open(model_file_path, "rb") as f:
         loaded_model = pickle.load(f)
 
-    now_timestamp = pd.Timestamp(datetime.now()).timestamp()
-    X_new = np.array([now_timestamp]).reshape(-1, 1)
-    current_price_pred = loaded_model.predict(X_new)
+    real_confidence = loaded_model.predict()
 
-    return current_price_pred[0][0]
+    return real_confidence[0][0]
 
 
 @app.route("/inference/AuthMark-DFD/<string:frameID>")
@@ -37,7 +35,7 @@ def generate_inference(frameID):
         return Response(json.dumps({"error": error_msg}), status=400, mimetype='application/json')
 
     try:
-        inference = get_eth_inference()
+        inference = get_inference()
         return Response(json.dumps({"real": inference.real,"fake": inference.fake}), status=500, mimetype='application/json')
     except Exception as e:
         return Response(json.dumps({"error": str(e)}), status=500, mimetype='application/json')

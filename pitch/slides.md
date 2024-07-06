@@ -245,7 +245,7 @@ transition: fade-out
 transition: fade-out
 ---
 
-# Solution Overview
+# Solution explored during hackathon
 
 1) Preventative Protection
 
@@ -290,18 +290,22 @@ transition: fade-out
 transition: fade-out
 ---
 
-# Preventative Protection
+## Preventative Protection
 
-1) Intentional "AI Poisoning" Inspired by "Nightshade" AI models modify pixels in a way that is invisible to the human
-   eye. This misleads AI scrapera and generators, which then believe the image shows one thing, whereas viewers see
-   something different.
+1) Intentional "AI Poisoning" Inspired by "Nightshade" modifies pixels in a minimal way not perceived by the human eye ,
+   misleads AI scrapers and generators.
 
-<div class="flex justify-center items-center ma-2">
-  <img width="320" height="400" src ="/nightshade.png"/><br>
+<div class="flex justify-center items-center ma-1">
+  <img width="300" height="400" src ="/nightshade.png"/><br>
 </div>
 
-2) Turns out a much simpler approach was to use colors that are invisible to the human eye ("ultraviolet"), but that AI models
-   interpret as something else.
+2) Turns out a much simpler approach was to use colors that are invisible to the human eye ("ultraviolet"), but that AI
+   models
+   interpret as something else -> Tom Cruise or Mr Bean?
+
+<div class="flex justify-center items-center ma-2">
+<img width="320" height="400" src ="/cruise-bean.png"/><br>
+</div>
 
 
 <div class="abs-br mr-6 mb-1">
@@ -322,119 +326,26 @@ transition: fade-out
     </span>
 
 </div>
+
 
 ---
 transition: fade-out
 ---
 
-# Motion
+## Challenges with preventative protection
 
-Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), triggered by `v-motion` directive.
+<br>
+1. Change sometimes are noticeable and not suitable for hi-res images/video
 
-<div class="w-60 relative">
-  <div class="relative w-80 h-80">
-    <img
-      v-motion
-      :initial="{ x: 600, y: 200, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="/logo.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -600, scale: 2 }"
-      :enter="final"
-      class="right-0"
-      src="https://sli.dev/logo-circle.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-triangle.png"
-      alt=""
-    />
-  </div>
+2. Easy for AI scapers/generators to adapt their models to mitigate
+3. Cat and mouse game between good actors and bad actors
 
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-
-<div class="page">
-<div class="abs-br mr-6 mb-1 text-xs left-6 pa-2">
-    <a href="https://authmark.org" target="_blank">AuthMark.org</a>
-  </div>p
-
-<div class="abs-br mr-6 mb-1">
-      <span
-      @click="$slidev.nav.prev"
-      class="arrow-container cursor-pointer text-white"
-      hover="bg-altBlue bg-opacity-75 text-white"
-    >
-      <carbon:chevron-left class="inline" />
-    </span>
-    {{ $slidev.nav.currentPage }} / {{ $slidev.nav.total }}
-    <span
-      @click="$slidev.nav.next"
-      class="arrow-container cursor-pointer text-white"
-      hover="bg-altBlue bg-opacity-75 text-white"
-    >
-      <carbon:chevron-right class="inline" />
-    </span>
-
+<div class="text-center mt-7">
+<b>Verdict:</b> Not a viable option, limited use cases easy to mitigate
+<div class="flex justify-center items-center ma-2">
+<img width="320" height="400" src ="/cat-mouse.gif"/><br>
 </div>
 </div>
-
-
-
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 190,
-  y: 10,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 30, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
-
----
-layout: image-right
-image: /VoiceCloning.jpg
----
-
-### Deep Fakes & Voice Cloning
-
-text...
-
-<div class="page">
-<div class="abs-br mr-6 mb-1 text-xs left-6 pa-2">
-    <a href="https://authmark.org" target="_blank">AuthMark.org</a>
-  </div>
 
 
 <div class="abs-br mr-6 mb-1">
@@ -454,7 +365,6 @@ text...
       <carbon:chevron-right class="inline" />
     </span>
 
-</div>
 </div>
 
 

@@ -36,5 +36,5 @@ Build
 
 Run
 `docker run -p 8000:8000 inference-server
-// endpoint http://localhost:8000/inference/1
+// endpoint http://127.0.0.1:8000/inference/AuthMark-DFD/2 //frame id
 
