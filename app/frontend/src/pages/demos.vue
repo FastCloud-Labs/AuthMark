@@ -86,7 +86,6 @@
       <div v-if="showPOL" class="text-center">
         <h2>Proof of life test</h2>
         <ProofOfLife/>
-        <ProofOfLifeHand/>
         <br>
         <v-btn @click="showPOL = false">Exit</v-btn>
       </div>
