@@ -253,10 +253,9 @@ export default {
           'link': 'https://readwrite.com/projected-2024-deepfake-scam-crypto-losses-exceed-25b-bitget/#:~:text=The%20most%20common%20deepfake%2Drelated,in%20the%20past%20two%20years.&text=Fraudsters%20often%20impersonate%20influential%20figures,of%20credibility%20and%20attract%20investments.'
         },
         {
-          'text': 'Deepfake videos are a growing threat. Companies will spend up to $188 billion in cybersecurity solutions, according to Gartner. It’s also tough to detect these deepfake videos in real time – detection apps require uploading videos for analysis, then waiting hours for results.',
-          'link': 'https://www.intel.com/content/www/us/en/newsroom/news/intel-introduces-real-time-deepfake-detector.html'
+          'text': 'Data breaches are on the rise, with more than 80% of breaches caused by weak, reused, or stolen passwords.',
+          'link': 'https://www.lastpass.com/company/about-us#:~:text=About%20LastPass&text=Data%20breaches%20are%20on%20the,critical%20for%20individuals%20and%20businesses.'
         },
-
 
       ]
     }

@@ -1,6 +1,6 @@
 <template>
   <div class="pa-1">
-    <p class="pb-6">Action Instruction: <span id="instruction">{{ actionInstruction }}</span></p>
+    <p class="pb-1">Action Instruction: <span id="instruction">{{ actionInstruction }}</span></p>
     <v-row>
       <v-col cols="6">
         <video id="my_video" ref="video" width="300" height="300" autoplay></video>
@@ -9,18 +9,17 @@
         <canvas id="my_canvas" ref="canvas" width="300" height="300"></canvas>
         <canvas id="output_canvas_hand" ref="outputCanvas" :height="200" :width="200"></canvas>
       </v-col>
+      <v-col cols="12">
+        <v-btn @click="showDot" color="primary">showDot</v-btn>
+        <br>
+
+        // todo change to progress bar and generate local certificate
+        // replace alert with sound
+        <p>Completed Action Count: <span id="actionCount">{{ completedActionCount }}</span></p>
+
+        <div id="gesture_output" ref="gestureOutput"></div>
+      </v-col>
     </v-row>
-    <div class="pa-6">
-      <v-btn @click="showDot" color="primary">showDot</v-btn>
-      <br>
-
-      // todo change to progress bar and generate local certificate
-      // replace alert with sound
-      <p>Completed Action Count: <span id="actionCount">{{ completedActionCount }}</span></p>
-
-      <div id="gesture_output" ref="gestureOutput"></div>
-
-    </div>
   </div>
 </template>
 
@@ -319,7 +318,7 @@ export default {
       this.randomnumber1 = this.randomNumber(50, 180);
       this.randomnumber2 = this.randomNumber(10, 80);
     },
-    collision({ box1, box2 }) {
+    collision({box1, box2}) {
       return box1.position.x + box1.width >= box2.position.x
     }
   },
@@ -347,6 +346,7 @@ export default {
   height: 300px;
   width: 300px;
   background: #000;
+  background: url(pol-bg.png);
   zoom: 1.2;
   transform: rotateY(180deg);
 }
@@ -358,5 +358,8 @@ canvas#output_canvas_hand {
   width: 350px;
   border-radius: 100%;
   transform: rotateY(180deg);
+}
+.v-col.v-col-6 {
+  max-height: 400px;
 }
 </style>
