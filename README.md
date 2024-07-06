@@ -1,5 +1,7 @@
 # AuthMark
 
+![Auth Mark](app/frontend/src/assets/logo.png)
+
 ## dAGI Hackathon Categories
 
 An AI-driven platform using blockchain for secure content verification and immutable records, combating fake news and malicious synthetic AI media ( deepfakes, voice cloning, disinformation).
