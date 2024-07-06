@@ -9,6 +9,12 @@
   },
   "dependencies": {
     "@mdi/font": "6.2.95",
+    "@mediapipe/camera_utils": "^0.3.1675466862",
+    "@mediapipe/control_utils": "^0.6.1675466023",
+    "@mediapipe/drawing_utils": "^0.3.1675466124",
+    "@mediapipe/face_mesh": "^0.4.1633559619",
+    "@mediapipe/hands": "^0.4.1675469240",
+    "@mediapipe/tasks-vision": "^0.10.14",
     "@tsparticles/engine": "^3.4.0",
     "@tsparticles/slim": "^3.4.0",
     "@tsparticles/vue3": "^3.0.1",

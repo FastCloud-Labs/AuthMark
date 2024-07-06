@@ -1,13 +1,13 @@
 <template>
   <div class="verify">
     <v-btn-group>
-      <v-btn variant="outlined" elevation="8" class="bg-black ma-2">Demo</v-btn>
-      <v-btn variant="outlined" elevation="8" class="bg-black ma-2">Verify</v-btn>
+      <v-btn href="/demos" variant="outlined" elevation="8" class="bg-black ma-2" router="/demos">Demo</v-btn>
+      <v-btn href="/verify" variant="outlined" elevation="8" class="bg-black ma-2">Verify</v-btn>
     </v-btn-group>
   </div>
   <v-container class="fill-height main">
     <v-responsive
-      class="align-centerfill-height mx-auto"
+      class=" fill-height mx-auto"
       max-width="1000"
     >
       <v-img
@@ -256,8 +256,6 @@ export default {
           'text': 'Deepfake videos are a growing threat. Companies will spend up to $188 billion in cybersecurity solutions, according to Gartner. It’s also tough to detect these deepfake videos in real time – detection apps require uploading videos for analysis, then waiting hours for results.',
           'link': 'https://www.intel.com/content/www/us/en/newsroom/news/intel-introduces-real-time-deepfake-detector.html'
         },
-
-
 
 
       ]

@@ -8,6 +8,24 @@ dependencies:
   '@mdi/font':
     specifier: 6.2.95
     version: 6.2.95
+  '@mediapipe/camera_utils':
+    specifier: ^0.3.1675466862
+    version: 0.3.1675466862
+  '@mediapipe/control_utils':
+    specifier: ^0.6.1675466023
+    version: 0.6.1675466023
+  '@mediapipe/drawing_utils':
+    specifier: ^0.3.1675466124
+    version: 0.3.1675466124
+  '@mediapipe/face_mesh':
+    specifier: ^0.4.1633559619
+    version: 0.4.1633559619
+  '@mediapipe/hands':
+    specifier: ^0.4.1675469240
+    version: 0.4.1675469240
+  '@mediapipe/tasks-vision':
+    specifier: ^0.10.14
+    version: 0.10.14
   '@tsparticles/engine':
     specifier: ^3.4.0
     version: 3.4.0
@@ -396,6 +414,30 @@ packages:
 
   /@mdi/font@6.2.95:
     resolution: {integrity: sha512-0RKkhabkFZP3ALwKqrjhdKdhydQpoydIjX6cvjIwLyjADCsE0pG68YkGY+S3qnfdErmhS4m8adwvgrAFXp2AYQ==}
+    dev: false
+
+  /@mediapipe/camera_utils@0.3.1675466862:
+    resolution: {integrity: sha512-siuXBoUxWo9WL0MeAxIxvxY04bvbtdNl7uCxoJxiAiRtNnCYrurr7Vl5VYQ94P7Sq0gVq6PxIDhWWeZ/pLnSzw==}
+    dev: false
+
+  /@mediapipe/control_utils@0.6.1675466023:
+    resolution: {integrity: sha512-CB+L71vUJJSqvULGsZGfqkEiqywoCB898MiM6qWGrk8t5El0HVmHrQbsh2Gx3/N/V2xlYzoU43Wwr2FEAIFHzg==}
+    dev: false
+
+  /@mediapipe/drawing_utils@0.3.1675466124:
+    resolution: {integrity: sha512-/IWIB/iYRMtiUKe3k7yGqvwseWHCOqzVpRDfMgZ6gv9z7EEimg6iZbRluoPbcNKHbYSxN5yOvYTzUYb8KVf22Q==}
+    dev: false
+
+  /@mediapipe/face_mesh@0.4.1633559619:
+    resolution: {integrity: sha512-Vc8cdjxS5+O2gnjWH9KncYpUCVXT0h714KlWAsyqJvJbIgUJBqpppbIx8yWcAzBDxm/5cYSuBI5p5ySIPxzcEg==}
+    dev: false
+
+  /@mediapipe/hands@0.4.1675469240:
+    resolution: {integrity: sha512-GxoZvL1mmhJxFxjuyj7vnC++JIuInGznHBin5c7ZSq/RbcnGyfEcJrkM/bMu5K1Mz/2Ko+vEX6/+wewmEHPrHg==}
+    dev: false
+
+  /@mediapipe/tasks-vision@0.10.14:
+    resolution: {integrity: sha512-vOifgZhkndgybdvoRITzRkIueWWSiCKuEUXXK6Q4FaJsFvRJuwgg++vqFUMlL0Uox62U5aEXFhHxlhV7Ja5e3Q==}
     dev: false
 
   /@nodelib/fs.scandir@2.1.5:

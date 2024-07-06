@@ -25,7 +25,8 @@
 </template>
 
 <script setup lang="ts">
-const items = []
+let items: any[];
+items = [];
 </script>
 
 <style scoped lang="sass">

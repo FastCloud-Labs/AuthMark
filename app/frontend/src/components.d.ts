@@ -10,6 +10,8 @@ declare module 'vue' {
     AppFooter: typeof import('./components/AppFooter.vue')['default']
     Landing: typeof import('./components/Landing.vue')['default']
     Particles: typeof import('./components/Particles.vue')['default']
+    ProofOfLife: typeof import('./components/ProofOfLife.vue')['default']
+    ProofOfLifeHand: typeof import('./components/ProofOfLifeHand.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

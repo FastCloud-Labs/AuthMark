@@ -16,15 +16,13 @@ export default createVuetify({
   theme: {
     defaultTheme: 'dark',
     themes: {
-      options: {
-        customProperties: true,
-      },
       dark: {
         dark: true,
         variables: {}, // ✅ this property is required to avoid Vuetify crash
         colors: {
           // Workaround: Custom colors seem to erase default colors, so we need to include the default colors (of `light` or `dark` theme)
-          background: '#22222285',
+          background: 'rgba(1,17,49,0.52)',
+          accent: 'rgba(1,17,49,0.52)',
         },
       },
     },
