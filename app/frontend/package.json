@@ -1,5 +1,5 @@
 {
-  "name": "AuthMark",
+  "name": "authmark",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
@@ -9,9 +9,18 @@
   },
   "dependencies": {
     "@mdi/font": "6.2.95",
+    "@tsparticles/engine": "^3.4.0",
+    "@tsparticles/slim": "^3.4.0",
+    "@tsparticles/vue3": "^3.0.1",
     "core-js": "^3.34.0",
+    "i": "^0.3.7",
+    "npm": "^10.8.1",
     "roboto-fontface": "*",
+    "tsparticles": "^3.4.0",
+    "tsparticles-engine": "^2.12.0",
+    "tsparticles-slim": "^2.12.0",
     "vue": "^3.4.21",
+    "vue3-particles": "^2.12.0",
     "vuetify": "^3.5.8"
   },
   "devDependencies": {
@@ -26,12 +35,15 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-vue": "^9.22.0",
+    "pinia": "^2.1.7",
     "sass": "^1.71.1",
     "typescript": "^5.4.2",
+    "unplugin-auto-import": "^0.17.5",
     "unplugin-fonts": "^1.1.1",
     "unplugin-vue-components": "^0.26.0",
     "unplugin-vue-router": "^0.8.4",
     "vite": "^5.1.5",
+    "vite-plugin-vue-layouts": "^0.11.0",
     "vite-plugin-vuetify": "^2.0.3",
     "vue-router": "^4.3.0",
     "vue-tsc": "^2.0.6"

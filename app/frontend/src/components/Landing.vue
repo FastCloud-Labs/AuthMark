@@ -112,9 +112,12 @@
               <div class="text-center">
 
                 <v-btn color="primary" class="mr-2" @click="demo">Schedule a demo</v-btn>
-                <v-btn color="default" variant="outlined" class="ml-2" href="/about">How it works</v-btn>
+                <v-btn color="default" variant="outlined" class="ml-2">How it works</v-btn>
               </div>
-
+              <v-img
+                class="img-r"
+                height="100"
+                src="@/assets/shield1.png"></v-img>
 
             </v-card>
           </v-col>
@@ -168,16 +171,51 @@
 
       </div>
 
+      <v-row>
+        <v-col cols="12">
+          <v-divider class="pt-4 mt-2"/>
+          <h3 class="px-4">News:</h3>
+          <v-sheet
+            class="mx-auto bg-transparent"
+          >
+
+            <v-slide-group
+              v-model="cases"
+              show-arrows
+            >
+              <v-slide-group-item
+                v-for="(c, index) in cases"
+                :key="index"
+              >
+                <v-card
+                  :class="['ma-4']"
+                  color="darken-2 border"
+                  height="180"
+                  width="260"
+                  show-arrows
+                >
+                  <div class="d-flex align-center justify-center">
+                    <p class="ma-4">
+                      {{ c.text }}
+                      <a :href="c.link" target="_blank">Read more</a>
+                    </p>
+                  </div>
+                </v-card>
+              </v-slide-group-item>
+            </v-slide-group>
+          </v-sheet>
+        </v-col>
+      </v-row>
     </v-responsive>
   </v-container>
 </template>
 
 <script>
-
+import CustomParticles from "@/components/Particles.vue";
 
 export default {
   name: 'landingpage',
-
+  components: {CustomParticles},
   data() {
     return {
       cases: [
