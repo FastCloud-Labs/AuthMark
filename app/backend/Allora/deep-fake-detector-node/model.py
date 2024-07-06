@@ -81,6 +81,6 @@ def predict(input_image:Image.Image, true_label:str):
 
         confidences = {
             'real': real_prediction,
-            'fake': fake_prediction
+            #'fake': fake_prediction
         }
     return confidences

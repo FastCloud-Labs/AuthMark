@@ -166,15 +166,16 @@ transition: fade-out
 
 
 <br>
-<h3 class=text-center>Cybercrime will cost $10.5 trillion globally by the end of 2025</h3>
+<h3 class=text-center>This is not sci-fi, these scams & crimes are already possible!</h3>
+<h3 class=text-center>
+Everday citizens & businesses are ill-prepared against the new wave AI crime</h3>
+
 
 <div class="flex justify-center items-center">
   <img width="620" height="200"  class="pa-4" src="/ai-crime.jpg"/><br>
-
 </div>
+<h3 class=text-center>Cybercrime is set to cost $10.5 trillion globally by the end of 2025</h3>
 
-<h3 class=text-center>
-Everday citizens & businesses are ill-prepared against the new wave AI crime</h3>
 
 <div class="page">
 <div class="abs-br mr-6 mb-1 text-xs left-6 pa-2">
@@ -220,7 +221,6 @@ transition: fade-out
 - Protecting copyrighted material from digital fraud such as (recent school exam leaks) or company PR & confidential
   docs leaks
 
-
 <div class="abs-br mr-6 mb-1">
       <span
       @click="$slidev.nav.prev"
@@ -247,22 +247,23 @@ transition: fade-out
 
 # Solution Overview
 
-1) Protection
+1) Preventative Protection
 
-   - AI models to generate Digital watermarking /poisoning using Allora for ongoing iterations & collaborative improvements
+    - AI models to generate Digital watermarking /poisoning using Allora for ongoing iterations & collaborative
+      improvements
 
 2) Detection
 
-   - AI models to detect synthetic content using Allora for ongoing iterations & collaborative improvements
-   - Centralized aggregate of verified misinformation
-       - x/twitter notes
-       - British Broadcasting Corporation (BBC Verify)
+    - AI models to detect synthetic content using Allora for ongoing iterations & collaborative improvements
+    - Centralized aggregate of verified misinformation
+        - x/twitter notes
+        - British Broadcasting Corporation (BBC Verify)
 
 3) Proof of Authenticity and Ownership
 
-   - AI digital watermarking
-   - Secure font "AuthMarkFont" (digital watermarked fonts)
-   - Decentralized Proof of Life and Authenticity Protocol (dePoAP)
+    - AI digital watermarking
+    - Secure font "AuthMarkFont" (digital watermarked fonts)
+    - Decentralized Proof of Life and Authenticity Protocol (dePoAP)
 
 <div class="abs-br mr-6 mb-1">
       <span
@@ -283,6 +284,44 @@ transition: fade-out
 
 </div>
 
+
+
+---
+transition: fade-out
+---
+
+# Preventative Protection
+
+1) Intentional "AI Poisoning" Inspired by "Nightshade" AI models modify pixels in a way that is invisible to the human
+   eye. This misleads AI scrapera and generators, which then believe the image shows one thing, whereas viewers see
+   something different.
+
+<div class="flex justify-center items-center ma-2">
+  <img width="320" height="400" src ="/nightshade.png"/><br>
+</div>
+
+2) Turns out a much simpler approach was to use colors that are invisible to the human eye ("ultraviolet"), but that AI models
+   interpret as something else.
+
+
+<div class="abs-br mr-6 mb-1">
+      <span
+      @click="$slidev.nav.prev"
+      class="arrow-container cursor-pointer text-white"
+      hover="bg-altBlue bg-opacity-75 text-white"
+    >
+      <carbon:chevron-left class="inline" />
+    </span>
+    {{ $slidev.nav.currentPage }} / {{ $slidev.nav.total }}
+    <span
+      @click="$slidev.nav.next"
+      class="arrow-container cursor-pointer text-white"
+      hover="bg-altBlue bg-opacity-75 text-white"
+    >
+      <carbon:chevron-right class="inline" />
+    </span>
+
+</div>
 
 ---
 transition: fade-out
