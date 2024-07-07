@@ -9,11 +9,10 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./components/AppFooter.vue')['default']
     AuthContent: typeof import('./components/AuthContent.vue')['default']
-    DePoAP: typeof import('./components/dePoAP.vue')['default']
+    DePoAP: typeof import('./components/DePoAP.vue')['default']
     Landing: typeof import('./components/Landing.vue')['default']
     Particles: typeof import('./components/Particles.vue')['default']
     ProofOfLife: typeof import('./components/ProofOfLife.vue')['default']
-    ProofOfLifeHand: typeof import('./components/ProofOfLifeHand.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
