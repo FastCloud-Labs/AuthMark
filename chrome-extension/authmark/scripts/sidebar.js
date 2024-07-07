@@ -109,15 +109,26 @@ const checkCallOn = () => {
 
     if (vids.length > 0 && vids.length != authTagged.length) {
         let elem = document.createElement("img");
-        elem.setAttribute("src", "https://www.learncube.com/images/logo.png");
+        elem.setAttribute("src", "https://authmark.org/gen-qr.png");
         elem.setAttribute("height", "80");
         elem.setAttribute("class", "auth-mark-tag");
         elem.style.position = "absolute";
         elem.style.zIndex = "99999";
+        elem.style.bottom = "0";
+        elem.style.right = "0";
+        document.getElementsByTagName("video")[0].insertAdjacentElement('afterend', elem);
+        marked = marked + 1
+        let elem = document.createElement("img");
+        elem.setAttribute("src", "https://authmark.org/status-1.png");
+        elem.setAttribute("height", "80");
+        elem.setAttribute("class", "auth-mark-tag");
+        elem.style.position = "absolute";
+        elem.style.zIndex = "99999";
+        elem.style.bottom = "0";
         document.getElementsByTagName("video")[0].insertAdjacentElement('afterend', elem);
         marked = marked + 1
     }
-    console.log("auth Tags",authTagged.length)
+    console.log("auth Tags", authTagged.length)
     if (menu.length > 0) { // If the menu exists we are in a call
         alert("menu loaded!")
         clearInterval(checkCallOnInterval) // Stop the loop

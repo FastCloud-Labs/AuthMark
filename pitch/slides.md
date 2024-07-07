@@ -281,13 +281,18 @@ transition: fade-out
 
 POL
 
+status for type of media
+
 document, copy paste
 scan dor leak
 
 video - poc + meet
 Cross-platoform, full-proof for non-technical users
 
+How it works
+
 Html banner (verified)
+https://codepen.io/abhayap/pen/ybjdWR
 
 Sign Authneticty using face, trigger contrce
 Scan for on chain record
@@ -450,12 +455,9 @@ by aggregating a wide range of "verified misinformation" sources, we can create 
 Users simply install the "AuthMark Chrome extension" which will search website pages in realtime for misinformation and
 synthetic content.
 
-// todo add Chrome extension demo/sceenshots
-
-
-
-<div class="flex justify-center items-center ma-2">
-<img width="600" src ="/chrome-extension-mis-information.png"/><br>
+<div class="grid grid-cols-2">
+  <div class="col-span-1 ma-8"><img width="250" height="250" src ="/chrome-ext-1.png"/><br><img width="250" height="250" src ="/chrome-ext-2.png"/></div>
+  <div class="col-span-1"><img  height="450" src ="/df-detected.png"/><br></div>
 </div>
 
 
@@ -532,9 +534,89 @@ We use Naptha.AI and Marlin for the following:
     <a href="https://authmark.org" target="_blank">AuthMark.org</a>
   </div>
 
+## How it works
+
+- Stegnography (in code)
+- LSB Steganography (using pixels)
+- Color Spectrum
+- "Morse code" within audio
+
+AI water markings & fingerprints are injected directly into the media device/wasm this way the stream is never exposed
+to a "middleman"
+
+Meta data is stored on chain, IP, "licencse time" proof of authenticity, custom data
+
+Scanning the live stream or doc for the watermark, will verify based on the on chain record
+
+Also experimenting with A.I generative fonts that are "fingerprinted" which can be used to verify the authenticity of
+message or printed docs.
+
+
+
+<div class="abs-br mr-6 mb-1">
+      <span
+      @click="$slidev.nav.prev"
+      class="arrow-container cursor-pointer text-white"
+      hover="bg-altBlue bg-opacity-75 text-white"
+    >
+      <carbon:chevron-left class="inline" />
+    </span>
+    {{ $slidev.nav.currentPage }} / {{ $slidev.nav.total }}
+
+</div>
+</div>
+
+
+---
+
+## How it works
+
+<div class="grid grid-cols-2 mt-4">
+  <div class="col-span-1"><img width="450"  src ="/inject-code.png"/></div>
+  <div class="col-span-1"><img  height="450" src ="/watermark-scanner.png"/><br></div>
+</div>
+
+
+<div class="grid grid-cols-2 mt-2">
+  <div class="col-span-1   mx-5"><img width="350"  src ="/doc.png"/></div>
+  <div class="col-span-1 mx-5"><img width="350" src ="/doc-scanner.png"/></div>
+</div>
+
+
+
+<div class="abs-br mr-6 mb-1">
+      <span
+      @click="$slidev.nav.prev"
+      class="arrow-container cursor-pointer text-white"
+      hover="bg-altBlue bg-opacity-75 text-white"
+    >
+      <carbon:chevron-left class="inline" />
+    </span>
+    {{ $slidev.nav.currentPage }} / {{ $slidev.nav.total }}
+
+</div>
+
+
+---
+
+<div class="page">
+<div class="abs-br mr-6 mb-1 text-xs left-6 pa-2">
+    <a href="https://authmark.org" target="_blank">AuthMark.org</a>
+  </div>
+
 ## Business Model
 
-Powered By nevermined
+Free starter plan for 5x Proof of Authentication and 7 days of protection.
+
+Bronze plan for $5/month for 20x Proof of Authentication and full protection.
+
+Silver plan for $19/month for 100x Proof of Authentication and full protection.
+
+Gold plan for families/multi account $59/month for 200x Proof of Authentication and full protection.
+
+Enterprise plan for employees ands company wide protection.
+
+Payments powered By nevermined
 
 
 <div class="abs-br mr-6 mb-1">

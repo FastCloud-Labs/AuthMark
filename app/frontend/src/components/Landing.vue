@@ -1,6 +1,7 @@
 <template>
   <div class="verify">
     <v-btn-group>
+      <v-btn href="/pitch" target="_blank" variant="outlined" elevation="8" class="bg-black ma-2" router="/demos">Pitch</v-btn>
       <v-btn href="/demos" variant="outlined" elevation="8" class="bg-black ma-2" router="/demos">Demo</v-btn>
       <v-btn href="/verify" variant="outlined" elevation="8" class="bg-black ma-2">Verify</v-btn>
     </v-btn-group>
@@ -318,7 +319,7 @@ v-card.v-theme--dark {
 
 .verify {
   position: absolute;
-  width: 190px;
+  width: 290px;
   right: 20px;
 }
 
