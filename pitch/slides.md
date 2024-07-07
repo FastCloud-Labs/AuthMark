@@ -273,6 +273,52 @@ transition: fade-out
 </div>
 
 
+---
+transition: fade-out
+---
+
+## Demo
+
+POL
+
+document, copy paste
+scan dor leak
+
+video - poc + meet
+Cross-platoform, full-proof for non-technical users
+
+Html banner (verified)
+
+Sign Authneticty using face, trigger contrce
+Scan for on chain record
+
+Html banner (Deepfake)
+Html banner (notes)
+
+Business model
+
+nevermined
+
+
+<div class="abs-br mr-6 mb-1">
+      <span
+      @click="$slidev.nav.prev"
+      class="arrow-container cursor-pointer text-white"
+      hover="bg-altBlue bg-opacity-75 text-white"
+    >
+      <carbon:chevron-left class="inline" />
+    </span>
+    {{ $slidev.nav.currentPage }} / {{ $slidev.nav.total }}
+    <span
+      @click="$slidev.nav.next"
+      class="arrow-container cursor-pointer text-white"
+      hover="bg-altBlue bg-opacity-75 text-white"
+    >
+      <carbon:chevron-right class="inline" />
+    </span>
+
+</div>
+
 
 ---
 transition: fade-out
@@ -478,38 +524,8 @@ We use Naptha.AI and Marlin for the following:
 
 </div>
 
----
-transition: fade-out
----
-
-## Demo
-
-<div class="abs-br mr-6 mb-1">
-      <span
-      @click="$slidev.nav.prev"
-      class="arrow-container cursor-pointer text-white"
-      hover="bg-altBlue bg-opacity-75 text-white"
-    >
-      <carbon:chevron-left class="inline" />
-    </span>
-    {{ $slidev.nav.currentPage }} / {{ $slidev.nav.total }}
-    <span
-      @click="$slidev.nav.next"
-      class="arrow-container cursor-pointer text-white"
-      hover="bg-altBlue bg-opacity-75 text-white"
-    >
-      <carbon:chevron-right class="inline" />
-    </span>
-
-</div>
-
-
 
 ---
-
-<!-- 
-Vision 
--->
 
 <div class="page">
 <div class="abs-br mr-6 mb-1 text-xs left-6 pa-2">
@@ -548,9 +564,7 @@ Vision
 
 ## Vision
 
-We believe in free speech and privacy therefore authenticating Proof of Life & Proof of Authenticity should be owned and
-controled by users not big tech.
-
+<p>Proof of Life & Proof of Authenticity should be owned and controlled by users not big tech.</p>
 <p>Firewalls and Anti-virus software are important tools to protect against cyber crime.</p>
 <p>Authmark is positioning itself to be a must have tool to protect businesses and citizens against the next generation malicious AI threats.</p>
 

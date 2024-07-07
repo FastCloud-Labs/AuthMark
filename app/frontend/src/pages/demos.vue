@@ -52,7 +52,7 @@
           <v-icon icon="mdi-lock-check"></v-icon>
           Verify Authenticity
         </v-list-item>
-        <v-list-item @click="showPOL = true">
+        <v-list-item @click="showDePoAPM">
           <v-icon icon="mdi-shield-lock-outline"></v-icon>
           Authenticity Protocol <small>(DePoAP)</small>
         </v-list-item>
@@ -95,6 +95,11 @@
         <AuthContent/>
         <br>
       </div>
+      <div v-if="showDePoAP" class="text-center">
+        <h2>DePoAP</h2>
+        <DePoAP/>
+        <br>
+      </div>
     </v-main>
   </v-layout>
 </template>
@@ -108,6 +113,7 @@ export default {
       start: true,
       showPOL: false,
       showAuthContent: false,
+      showDePoAP: false,
       menu: [
         {title: 'Profile'},
         {title: 'Settings'},
@@ -128,6 +134,10 @@ export default {
     showAuthContentM() {
       this.closeAll()
       this.showAuthContent = true;
+    },
+    showDePoAPM() {
+      this.closeAll()
+      this.showDePoAP = true;
     },
   },
 };
