@@ -45,7 +45,7 @@ Poof of Life:
 ![pol-demo.png](https://cdn.dorahacks.io/static/files/1908cf5e9e2600f424dab1348e0a9197.png)
 
 
-Chrome Extension:
+Chrome Extension for safe browsing:
 
 ![chrome-ext-1.png](https://cdn.dorahacks.io/static/files/1908cf680ec449b713ef3664c198d976.png)
 
