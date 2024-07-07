@@ -45,7 +45,8 @@ to verify the authenticity of the content and the ownership of the content.
 
 ## PoC Demo
 
-[authmark.org/demos](http://authmark.org/demos)
+[authmark.org/demos](http://authmark.org)
+
 
 
 
