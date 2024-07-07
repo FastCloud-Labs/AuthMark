@@ -544,12 +544,14 @@ We use Naptha.AI and Marlin for the following:
 AI water markings & fingerprints are injected directly into the media device/wasm this way the stream is never exposed
 to a "middleman"
 
-Meta data is stored on chain, IP, "licencse time" proof of authenticity, custom data
+Meta data is stored on chain, IP, "license time" proof of authenticity, custom data
 
 Scanning the live stream or doc for the watermark, will verify based on the on chain record
 
 Also experimenting with A.I generative fonts that are "fingerprinted" which can be used to verify the authenticity of
 message or printed docs.
+
+Screen shot and leak protection
 
 
 
