@@ -5,7 +5,14 @@
       class=" fill-height mx-auto"
       max-width="1000"
     >
-      <h1 class="text-center mt-2">How AuthMark Works</h1>
+      <h1 class="text-center mt-2">AuthMark Pitch</h1>
+      Video<br>
+      <br>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/B7q6ctPAftw?si=YKugRFhR7XPKroNO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+      <br><br>
+      Slides:
+      <br><a href="https://pitch.authmark.org">https://pitch.authmark.org</a>
     </v-responsive>
   </v-container>
 

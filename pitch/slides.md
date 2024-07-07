@@ -8,7 +8,7 @@ background: bg.png
 title: Welcome to AuthMark
 info: |
   ## AuthMark
-  Protecting citizens and business against malicious AGI (deepfakes, voice cloning, disinformation).
+  Protecting citizens and business against malicious AI (deepfakes, voice cloning, disinformation).
 # apply unocss classes to the current slide
 class: text-center
 # slide transition: https://sli.dev/guide/animations#slide-transitions
@@ -25,7 +25,7 @@ contextMenu: false
 
 <div class="left-0">
 <h4>Decentralized Proof of Life & Proof of Authenticity Protocol
-          to protecting against malicious AI</h4>
+          to protect against malicious AI</h4>
 </div>
 
 <div class="pt-12">
@@ -274,35 +274,92 @@ transition: fade-out
 
 
 ---
+
+<div class="page">
+<div class="abs-br mr-6 mb-1 text-xs left-6 pa-2">
+    <a href="https://authmark.org" target="_blank">AuthMark.org</a>
+  </div>
+
+## How it works
+
+- Stegnography (in code)
+- LSB Steganography (using pixels)
+- Color Spectrum
+- "Morse code" within audio
+
+AI water markings & fingerprints are injected directly into the media device/wasm this way the stream is never exposed
+to a "middleman"
+
+Meta data is stored on chain, IP, "license time" proof of authenticity, custom data
+
+Scanning the live stream or doc for the watermark, will verify based on the on chain record
+
+Also experimenting with A.I generative fonts that are "fingerprinted" which can be used to verify the authenticity of
+message or printed docs.
+
+Screen shot and leak protection
+
+
+
+<div class="abs-br mr-6 mb-1">
+      <span
+      @click="$slidev.nav.prev"
+      class="arrow-container cursor-pointer text-white"
+      hover="bg-altBlue bg-opacity-75 text-white"
+    >
+      <carbon:chevron-left class="inline" />
+    </span>
+    {{ $slidev.nav.currentPage }} / {{ $slidev.nav.total }}
+
+</div>
+</div>
+
+
+---
+
+## How it works
+
+<div class="grid grid-cols-2 mt-4">
+  <div class="col-span-1"><img width="450"  src ="/inject-code.png"/></div>
+  <div class="col-span-1"><img  height="450" src ="/watermark-scanner.png"/><br></div>
+</div>
+
+
+<div class="grid grid-cols-2 mt-2">
+  <div class="col-span-1   mx-5"><img width="350"  src ="/doc.png"/></div>
+  <div class="col-span-1 mx-5"><img width="350" src ="/doc-scanner.png"/></div>
+</div>
+
+
+
+<div class="abs-br mr-6 mb-1">
+      <span
+      @click="$slidev.nav.prev"
+      class="arrow-container cursor-pointer text-white"
+      hover="bg-altBlue bg-opacity-75 text-white"
+    >
+      <carbon:chevron-left class="inline" />
+    </span>
+    {{ $slidev.nav.currentPage }} / {{ $slidev.nav.total }}
+
+</div>
+
+---
 transition: fade-out
 ---
 
 ## Demo
 
-POL
+Notes:
 
-status for type of media
+- Proof of life certifcate
+- status for type of media
+- document, copy paste ,scan dor leak
+- video - poc + meet
+- Cross-platform, full-proof for non-technical users using chrome extension
 
-document, copy paste
-scan dor leak
+[Demo Video](https://www.youtube.com/watch?v=B7q6ctPAftw)
 
-video - poc + meet
-Cross-platoform, full-proof for non-technical users
-
-How it works
-
-Html banner (verified)
-https://codepen.io/abhayap/pen/ybjdWR
-
-Sign Authneticty using face, trigger contrce
-Scan for on chain record
-
-Html banner (Deepfake)
-Html banner (notes)
-
-Business model
-
-nevermined
 
 
 <div class="abs-br mr-6 mb-1">
@@ -527,76 +584,6 @@ We use Naptha.AI and Marlin for the following:
 </div>
 
 
----
-
-<div class="page">
-<div class="abs-br mr-6 mb-1 text-xs left-6 pa-2">
-    <a href="https://authmark.org" target="_blank">AuthMark.org</a>
-  </div>
-
-## How it works
-
-- Stegnography (in code)
-- LSB Steganography (using pixels)
-- Color Spectrum
-- "Morse code" within audio
-
-AI water markings & fingerprints are injected directly into the media device/wasm this way the stream is never exposed
-to a "middleman"
-
-Meta data is stored on chain, IP, "license time" proof of authenticity, custom data
-
-Scanning the live stream or doc for the watermark, will verify based on the on chain record
-
-Also experimenting with A.I generative fonts that are "fingerprinted" which can be used to verify the authenticity of
-message or printed docs.
-
-Screen shot and leak protection
-
-
-
-<div class="abs-br mr-6 mb-1">
-      <span
-      @click="$slidev.nav.prev"
-      class="arrow-container cursor-pointer text-white"
-      hover="bg-altBlue bg-opacity-75 text-white"
-    >
-      <carbon:chevron-left class="inline" />
-    </span>
-    {{ $slidev.nav.currentPage }} / {{ $slidev.nav.total }}
-
-</div>
-</div>
-
-
----
-
-## How it works
-
-<div class="grid grid-cols-2 mt-4">
-  <div class="col-span-1"><img width="450"  src ="/inject-code.png"/></div>
-  <div class="col-span-1"><img  height="450" src ="/watermark-scanner.png"/><br></div>
-</div>
-
-
-<div class="grid grid-cols-2 mt-2">
-  <div class="col-span-1   mx-5"><img width="350"  src ="/doc.png"/></div>
-  <div class="col-span-1 mx-5"><img width="350" src ="/doc-scanner.png"/></div>
-</div>
-
-
-
-<div class="abs-br mr-6 mb-1">
-      <span
-      @click="$slidev.nav.prev"
-      class="arrow-container cursor-pointer text-white"
-      hover="bg-altBlue bg-opacity-75 text-white"
-    >
-      <carbon:chevron-left class="inline" />
-    </span>
-    {{ $slidev.nav.currentPage }} / {{ $slidev.nav.total }}
-
-</div>
 
 
 ---
