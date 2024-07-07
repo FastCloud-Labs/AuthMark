@@ -57,7 +57,7 @@ Proof of Authenticity and deep fake protection for live calls (platform agnostic
 
 AI Fingerprinting and Proof of Authenticity in realtime:
 
-![watermark-scanner.png](https://cdn.dorahacks.io/static/files/1908cf70e3954dc878480d64bcd95595.png)
+![watermark-scanner.png](https://cdn.dorahacks.io/static/files/1908cf6d58868491117ce4a4cf2b2236.png)
 
 
 Chrome Extension alerts when webpage has know misinformation
