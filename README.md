@@ -40,7 +40,7 @@ to verify the authenticity of the content and the ownership of the content.
 - Reverse proxy for dynamic content delivery and status updates
 
 
-Poof of Life:
+Proof of Life:
 
 ![pol-demo.png](https://cdn.dorahacks.io/static/files/1908cf5e9e2600f424dab1348e0a9197.png)
 
