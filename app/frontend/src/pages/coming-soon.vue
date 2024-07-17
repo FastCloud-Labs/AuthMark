@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import ComingSoon from '@/components/ComingSoon.vue'
+import ComingSoon from '@/components/ComingSoonForm.vue'
 
 export default {
   components: {
