@@ -10,6 +10,7 @@ declare module 'vue' {
     AppFooter: typeof import('./components/AppFooter.vue')['default']
     AuthContent: typeof import('./components/AuthContent.vue')['default']
     ChromeExtension: typeof import('./components/ChromeExtension.vue')['default']
+    ComingSoon: typeof import('./components/comingSoon.vue')['default']
     DePoAP: typeof import('./components/DePoAP.vue')['default']
     Landing: typeof import('./components/Landing.vue')['default']
     Particles: typeof import('./components/Particles.vue')['default']

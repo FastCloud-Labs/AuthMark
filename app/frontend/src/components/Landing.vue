@@ -1,9 +1,8 @@
 <template>
   <div class="verify">
     <v-btn-group>
-      <v-btn href="/pitch" target="_blank" variant="outlined" elevation="8" class="bg-black ma-2" router="/demos">Pitch</v-btn>
       <v-btn href="/demos" variant="outlined" elevation="8" class="bg-black ma-2" router="/demos">Demo</v-btn>
-      <v-btn href="/verify" variant="outlined" elevation="8" class="bg-black ma-2">Verify</v-btn>
+      <v-btn href="/coming-soon" variant="outlined" elevation="8" class="bg-black ma-2">Verify</v-btn>
     </v-btn-group>
   </div>
   <v-container class="fill-height main">
@@ -106,14 +105,16 @@
               <template #subtitle>
                 <div class="text-subtitle-1">
                   Video calls, audio calls,
-                  social media posts, images, documents, PDFs, screeenshots & more
+                  social media posts, images, documents, PDFs, screenshots & more
                 </div>
               </template>
 
               <div class="text-center">
 
                 <v-btn color="primary" class="mr-2" href="/demos">Demo</v-btn>
-                <v-btn color="default" variant="outlined" class="ml-2" href="/how-it-works">How it works</v-btn>
+                <v-btn color="default" variant="outlined" class="ml-2" href="https://pitch.authmark.org/" target="new">
+                  How it works
+                </v-btn>
               </div>
               <v-img
                 class="img-r"
@@ -264,7 +265,7 @@ export default {
   },
   methods: {
     demo() {
-      alert('demo')
+      this.$router.push('/contact-us')
     }
   },
 }

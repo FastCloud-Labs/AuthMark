@@ -397,7 +397,7 @@ export default {
   height: 300px;
   width: 300px;
   background: #000;
-  background: url(pol-bg.png);
+  background: url('/pol-bg.png');
   zoom: 1.2;
   transform: rotateY(180deg);
 }

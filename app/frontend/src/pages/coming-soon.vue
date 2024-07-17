@@ -5,19 +5,22 @@
       class=" fill-height mx-auto"
       max-width="1000"
     >
-      <h1 class="text-center mt-2">AuthMark Pitch</h1>
-      <div class="text-center">
-        <br>
-        <v-btn href="https://pitch.authmark.org" color="info">View Slides
-        </v-btn>
-      </div>
+      <comingSoon></comingSoon>
     </v-responsive>
   </v-container>
 
 
 </template>
 
+<script>
+import ComingSoon from '@/components/ComingSoon.vue'
 
+export default {
+  components: {
+    ComingSoon
+  }
+}
+</script>
 <style>
 .main-cover {
   background: url('/bg.png');

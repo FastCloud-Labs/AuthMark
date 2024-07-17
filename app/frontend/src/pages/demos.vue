@@ -44,20 +44,20 @@
           <v-icon icon="mdi-account-key-outline"></v-icon>
           Create Proof of Authenticity
         </v-list-item>
-        <v-list-item @click="showPOL = true">
+        <v-list-item @click="comingSoon">
           <v-icon icon="mdi-text-shadow"></v-icon>
           Secure Font
         </v-list-item>
-        <v-list-item @click="showPOL = true">
+        <v-list-item @click="comingSoon">
           <v-icon icon="mdi-lock-check"></v-icon>
           Verify Authenticity
         </v-list-item>
-        <v-list-item @click="showDePoAPM">
+        <v-list-item @click="comingSoon">
           <v-icon icon="mdi-shield-lock-outline"></v-icon>
           Authenticity Protocol <small>(DePoAP)</small>
         </v-list-item>
 
-        <v-list-item @click="showPOL = true">
+        <v-list-item @click="comingSoon">
           <v-icon icon="mdi-google-chrome"></v-icon>
           Chrome Extension
         </v-list-item>
@@ -85,7 +85,7 @@
       </div>
       <div v-if="showAuthContent" class="text-center">
         <h2>Authenticate Content</h2>
-        <p>AuthMark makes it easy too prove authenticity and protect against unauthorised distribution.</p>
+        <p>AuthMark makes it easy to prove authenticity and protect against unauthorised distribution.</p>
         <a href="/how-it-works">How it works</a>
         <div class="text-center ma-6">
           <v-img :width="300"
@@ -100,20 +100,28 @@
         <DePoAP/>
         <br>
       </div>
+      <div v-if="showComingSoon">
+        <ComingSoon/>
+      </div>
     </v-main>
   </v-layout>
 </template>
 
 
 <script>
+import ComingSoon from '@/components/ComingSoon.vue'
 
 export default {
+  components: {
+    ComingSoon
+  },
   data() {
     return {
       start: true,
       showPOL: false,
       showAuthContent: false,
       showDePoAP: false,
+      showComingSoon: false,
       menu: [
         {title: 'Profile'},
         {title: 'Settings'},
@@ -126,6 +134,7 @@ export default {
       this.start = false;
       this.showPOL = false;
       this.showAuthContent = false;
+      this.showComingSoon = false;
     },
     showPOLM() {
       this.closeAll()
@@ -138,6 +147,10 @@ export default {
     showDePoAPM() {
       this.closeAll()
       this.showDePoAP = true;
+    },
+    comingSoon() {
+      this.closeAll()
+      this.showComingSoon = true;
     },
   },
 };
