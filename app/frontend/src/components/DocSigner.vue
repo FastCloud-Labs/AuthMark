@@ -201,8 +201,7 @@ export default {
   data() {
     return {
       currentPdf: currentPdfO,
-      pdfCanvasRef: '',
-
+      pdfCanvasRef: this.$refs.pdfCanvasRef,
       text: {
         firstname: '',
         lastname: '',
@@ -227,8 +226,10 @@ export default {
   watch: {
     loadSig(value) {
       let fr = new FileReader()
+      // @ts-ignore */}
       self = this;
       fr.addEventListener("load", function (e) {
+        // @ts-ignore */}
         self.image = e.target.result;
       });
       fr.readAsDataURL(value)
@@ -241,17 +242,19 @@ export default {
     }
   },
   mounted() {
-    this.getBase64Image(document.getElementById("imageWB"))
+    this.getBase64Image({img: document.getElementById("imageWB")})
   },
   methods: {
-    getBase64Image(img) {
+    getBase64Image({img}: { img: any }) {
       var canvas = document.createElement("canvas");
       canvas.width = img.width;
       canvas.height = img.height;
       var ctx = canvas.getContext("2d");
-      ctx.drawImage(img, 0, 0);
-      var dataURL = canvas.toDataURL("image/png");
-      this.watermarkBase64 = dataURL
+      if (ctx) {
+        ctx.drawImage(img, 0, 0);
+        var dataURL = canvas.toDataURL("image/png");
+        this.watermarkBase64 = dataURL
+      }
     },
     async uploadFile(event: Event) {
       const target = event.target as HTMLInputElement;
@@ -294,7 +297,7 @@ export default {
     },
     async addWaterMark() {
       this.downloadStarted = true;
-      this.pdfCanvasRef = this.$refs.pdfCanvasRef;
+      // @ts-ignore */}
       this.pdfCanvasRef.addImage(this.watermarkBase64, {
         top: 0,
         left: 0,
@@ -313,6 +316,7 @@ export default {
           for (var k = i - 1; k < verCount && k <= i + 1; k++) {
             for (var l = j - 1; l < horCount && l <= j + 1; l++) {
               count = count + 1;
+              // @ts-ignore */}
               this.pdfCanvasRef.addImage(this.watermarkBase64, {
                 top: (this.watermarkSize + this.watermarkSize) * k,
                 left: (this.watermarkSize + this.watermarkSize) * l,
@@ -340,6 +344,7 @@ export default {
       setTimeout(() => {
         this.zoom = 2
       }, 1000)
+      // @ts-ignore */}
       var imgData = this.pdfCanvasRef.canvasRef.toDataURL("image/jpeg", 1.0);
       await printJS({printable: imgData, type: 'image', base64: true})
 
@@ -357,9 +362,10 @@ export default {
       let lastZoom = parseFloat(JSON.stringify(this.zoom));
       this.zoom = 1;
       // only jpeg is supported by jsPDF
+      // @ts-ignore */}
       var imgData = this.pdfCanvasRef.canvasRef.toDataURL("image/jpeg", 1.0);
       var pdf = new jsPDF();
-
+// @ts-ignore */}
       pdf.addImage(imgData, 'JPEG', 0, 0, this.pdfCanvasRef.canvasRef.width / 8, this.pdfCanvasRef.canvasRef.height / 8)
       await pdf.save("download.pdf")
 

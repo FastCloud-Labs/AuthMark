@@ -84,11 +84,11 @@ Module.expectedDataFileDownloads++;
         }
       };
       xhr.send(null);
-    };
+    }
 
     function handleError(error) {
       console.error('package error:', error);
-    };
+    }
 
     var fetchedCallback = null;
     var fetched = Module['getPreloadedPackage'] ? Module['getPreloadedPackage'](REMOTE_PACKAGE_NAME, REMOTE_PACKAGE_SIZE) : null;
@@ -169,7 +169,7 @@ Module.expectedDataFileDownloads++;
         }
         Module['removeRunDependency']('datafile_blaze-out/k8-opt/genfiles/third_party/mediapipe/web/solutions/hands/hands_solution_packed_assets.data');
 
-      };
+      }
       Module['addRunDependency']('datafile_blaze-out/k8-opt/genfiles/third_party/mediapipe/web/solutions/hands/hands_solution_packed_assets.data');
 
       if (!Module.preloadResults) Module.preloadResults = {};

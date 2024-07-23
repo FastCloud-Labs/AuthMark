@@ -84,11 +84,11 @@ Module.expectedDataFileDownloads++;
         }
       };
       xhr.send(null);
-    };
+    }
 
     function handleError(error) {
       console.error('package error:', error);
-    };
+    }
   
       var fetchedCallback = null;
       var fetched = Module['getPreloadedPackage'] ? Module['getPreloadedPackage'](REMOTE_PACKAGE_NAME, REMOTE_PACKAGE_SIZE) : null;
@@ -171,7 +171,7 @@ Module['FS_createPath']("/third_party/mediapipe/modules", "face_detection", true
           }
               Module['removeRunDependency']('datafile_blaze-out/k8-opt/genfiles/third_party/mediapipe/web/solutions/face_mesh/face_mesh_solution_packed_assets.data');
 
-    };
+    }
     Module['addRunDependency']('datafile_blaze-out/k8-opt/genfiles/third_party/mediapipe/web/solutions/face_mesh/face_mesh_solution_packed_assets.data');
   
     if (!Module.preloadResults) Module.preloadResults = {};
