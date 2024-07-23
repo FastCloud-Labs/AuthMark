@@ -21,6 +21,7 @@
     "@tsparticles/vue3": "^3.0.1",
     "core-js": "^3.34.0",
     "i": "^0.3.7",
+    "jspdf": "^2.5.1",
     "npm": "^10.8.1",
     "roboto-fontface": "*",
     "tsparticles": "^3.4.0",

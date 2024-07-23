@@ -45,18 +45,6 @@
             cols="12"
             md="4"
           >
-            <v-file-input
-              v-model="loadSig"
-              label="Signature"
-              hide-details
-              prepend-icon="mdi-draw"
-            >
-            </v-file-input>
-          </v-col>
-          <v-col
-            cols="12"
-            md="4"
-          >
             <v-text-field
               v-model="text.additional"
               label="Additional Text"
@@ -65,10 +53,27 @@
               prepend-icon="mdi-format-text"
             ></v-text-field>
           </v-col>
+          <v-col
+            cols="12"
+            md="4"
+          >
+            <v-file-input
+              v-model="loadSig"
+              label="Signature"
+              hide-details
+              prepend-icon="mdi-draw"
+            >
+            </v-file-input>
+          </v-col>
+
 
         </v-row>
 
-        <p class="text-center text-sm pa-2 ma-2">Drag & Drop details onto document</p>
+        <p class="text-center text-sm pa-2 ma-2" v-if="text.firstname || image || text.initals">
+          <v-icon icon="mdi-arrow-down-left"></v-icon>
+          Drag & Drop details onto document
+          <v-icon icon="mdi-arrow-down-right"></v-icon>
+        </p>
         <v-row>
           <v-col cols="2">
           </v-col>
@@ -114,6 +119,7 @@
           <v-col>
             <div v-if="image" class="border rounded-lg cursor-move pa-2">
               <v-img
+                crossorigin="anonymous"
                 :src="image"
                 alt="Signature image"
                 class="rounded-lg cursor-move bg-white"
@@ -157,7 +163,8 @@
         width="30%"
         class="text-center mx-auto"
       ></v-slider>
-      <v-btn @click="addWaterMark">Add AuthMark</v-btn>
+      <v-btn @click="addWaterMark" color="success" size="large">Save</v-btn>
+
     </div>
 
   </div>
@@ -167,15 +174,14 @@
                   @change="uploadFile">Upload
     </v-file-input>
   </div>
-
-
+  <img id="imageWB" :src="watermark" crossorigin="anonymous" hidden>
 </template>
 
 
 <script lang="ts">
-import {type PDF, useFabric} from '@component-hook/pdf-canvas';
-
+import PdfCanvas, {type PDF, useFabric} from '@component-hook/pdf-canvas';
 import {VDateInput} from 'vuetify/labs/VDateInput'
+import {jsPDF} from "jspdf";
 
 const {loadFile} = useFabric();
 const currentPdfO = ref<PDF>();
@@ -183,12 +189,14 @@ const currentPdfO = ref<PDF>();
 
 export default {
   components: {
+    PdfCanvas,
     VDateInput
   },
   data() {
     return {
       currentPdf: currentPdfO,
       pdfCanvasRef: '',
+
       text: {
         firstname: '',
         lastname: '',
@@ -204,7 +212,8 @@ export default {
       docWidth: 1200,
       image: '',
       watermark: 'https://authmark.org/favicon-32x32.png', // todo replace with dynacmic generated watermark
-      watermarkSize: 32
+      watermarkSize: 32,
+      watermarkBase64: ''
     }
   },
   watch: {
@@ -213,19 +222,30 @@ export default {
       let fr = new FileReader()
       self = this;
       fr.addEventListener("load", function (e) {
-        //this is your base64
-        console.log(e.target.result)
         self.image = e.target.result;
       });
       fr.readAsDataURL(value)
     },
+
   },
   computed: {
     formatedDate() {
       return this.text.date.toDateString();
     }
   },
+  mounted() {
+    this.getBase64Image(document.getElementById("imageWB"))
+  },
   methods: {
+    getBase64Image(img) {
+      var canvas = document.createElement("canvas");
+      canvas.width = img.width;
+      canvas.height = img.height;
+      var ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0);
+      var dataURL = canvas.toDataURL("image/png");
+      this.watermarkBase64 = dataURL
+    },
     async uploadFile(event: Event) {
       const target = event.target as HTMLInputElement;
       const {files} = target;
@@ -237,7 +257,6 @@ export default {
 
       this.currentPdf = content;
       target.value = '';
-      this.addWaterMark();
     },
 
     dragImage(event: DragEvent) {
@@ -266,14 +285,17 @@ export default {
     zoomIn() {
       this.zoom = (this.zoom + 0.5) || 3
     },
-    addWaterMark() {
+    async addWaterMark() {
       this.pdfCanvasRef = this.$refs.pdfCanvasRef;
-      console.log(this.pdfCanvasRef.canvasRef.width);
-      this.pdfCanvasRef.addImage(this.watermark, {
+      console.log(this.watermarkBase64)
+      this.pdfCanvasRef.addImage(this.watermarkBase64, {
         top: 0,
         left: 0,
         opacity: 0.5,
-        hasControls: false, hasBorders: false, selectable: false
+        hasControls: false,
+        hasBorders: false,
+        selectable: false,
+        crossOrigin: 'Anonymous'
       });
       let verCount = this.watermarkSize / 1.5;
       let horCount = this.watermarkSize / 1.5;
@@ -283,18 +305,35 @@ export default {
           //iterates through a box around each cell
           for (var k = i - 1; k < verCount && k <= i + 1; k++) {
             for (var l = j - 1; l < horCount && l <= j + 1; l++) {
-              console.log(count++);
-              this.pdfCanvasRef.addImage(this.watermark, {
+              count = count++
+              this.pdfCanvasRef.addImage(this.watermarkBase64, {
                 top: (this.watermarkSize + this.watermarkSize) * k,
                 left: (this.watermarkSize + this.watermarkSize) * l,
                 opacity: 0.005,
-                hasControls: false, hasBorders: false, selectable: false
+                hasControls: false,
+                hasBorders: false,
+                selectable: false,
+                crossOrigin: 'Anonymous'
               });
             }
           }
         }
       }
+      console.log('total watermarks:', count)
+      await this.download()
+    },
 
+    async download() {
+      console.log('start download')
+      let lastZoom = this.zoom;
+      this.zoom = 1;
+      // only jpeg is supported by jsPDF
+      var imgData = this.pdfCanvasRef.canvasRef.toDataURL("image/jpeg", 1.0);
+      var pdf = new jsPDF();
+
+      pdf.addImage(imgData, 'JPEG', 0, 0);
+      await pdf.save("download.pdf");
+      this.zoom = lastZoom;
     }
   }
 };
