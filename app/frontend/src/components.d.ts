@@ -12,6 +12,7 @@ declare module 'vue' {
     ChromeExtension: typeof import('./components/ChromeExtension.vue')['default']
     ComingSoonForm: typeof import('./components/ComingSoonForm.vue')['default']
     DePoAP: typeof import('./components/DePoAP.vue')['default']
+    DocSigner: typeof import('./components/DocSigner.vue')['default']
     Landing: typeof import('./components/Landing.vue')['default']
     Particles: typeof import('./components/Particles.vue')['default']
     ProofOfLife: typeof import('./components/ProofOfLife.vue')['default']

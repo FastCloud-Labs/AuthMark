@@ -32,7 +32,7 @@ Detection of fake content using AI models that can detect the subtle differences
 Using blockchain to store the provenance of the content and the reputation of the creator, this can help
 to verify the authenticity of the content and the ownership of the content.
 
-### Feature
+### Features
 
 - AI digital watermarking (methods for video, audio,images and documents)
 - Secure font "AuthMarkFont" (digital watermarked fonts)
