@@ -163,7 +163,12 @@
         width="30%"
         class="text-center mx-auto"
       ></v-slider>
-      <v-btn @click="addWaterMark" color="success" size="large">Save</v-btn>
+      <v-btn-group>
+        <v-btn @click="addWaterMark" color="success" size="large" :loading="downloadStarted">Save</v-btn>
+        <v-btn v-if="saved" @click="download" color="primary" size="large">Download</v-btn>
+        <v-btn v-if="saved" @click="print" color="primary" size="large">Print</v-btn>
+        <v-btn v-if="saved" @click="share" color="primary" disabled size="large">Share</v-btn>
+      </v-btn-group>
 
     </div>
 
@@ -182,6 +187,7 @@
 import PdfCanvas, {type PDF, useFabric} from '@component-hook/pdf-canvas';
 import {VDateInput} from 'vuetify/labs/VDateInput'
 import {jsPDF} from "jspdf";
+import printJS from "print-js";
 
 const {loadFile} = useFabric();
 const currentPdfO = ref<PDF>();
@@ -213,12 +219,13 @@ export default {
       image: '',
       watermark: 'https://authmark.org/favicon-32x32.png', // todo replace with dynacmic generated watermark
       watermarkSize: 32,
-      watermarkBase64: ''
+      watermarkBase64: '',
+      downloadStarted: false,
+      saved: false
     }
   },
   watch: {
     loadSig(value) {
-      console.log("value", value)
       let fr = new FileReader()
       self = this;
       fr.addEventListener("load", function (e) {
@@ -286,8 +293,8 @@ export default {
       this.zoom = (this.zoom + 0.5) || 3
     },
     async addWaterMark() {
+      this.downloadStarted = true;
       this.pdfCanvasRef = this.$refs.pdfCanvasRef;
-      console.log(this.watermarkBase64)
       this.pdfCanvasRef.addImage(this.watermarkBase64, {
         top: 0,
         left: 0,
@@ -305,7 +312,7 @@ export default {
           //iterates through a box around each cell
           for (var k = i - 1; k < verCount && k <= i + 1; k++) {
             for (var l = j - 1; l < horCount && l <= j + 1; l++) {
-              count = count++
+              count = count + 1;
               this.pdfCanvasRef.addImage(this.watermarkBase64, {
                 top: (this.watermarkSize + this.watermarkSize) * k,
                 left: (this.watermarkSize + this.watermarkSize) * l,
@@ -320,20 +327,51 @@ export default {
         }
       }
       console.log('total watermarks:', count)
-      await this.download()
+      setTimeout(() => {
+        this.saved = true;
+        this.downloadStarted = false;
+      }, 1000)
     },
 
+    async print() {
+      //todo aggregate all images and print
+      console.log('//todo aggregate all images and print')
+      let lastZoom = parseFloat(JSON.stringify(this.zoom));
+      setTimeout(() => {
+        this.zoom = 2
+      }, 1000)
+      var imgData = this.pdfCanvasRef.canvasRef.toDataURL("image/jpeg", 1.0);
+      await printJS({printable: imgData, type: 'image', base64: true})
+
+      setTimeout(() => {
+        this.zoom = lastZoom;
+        this.saved = true;
+        this.downloadStarted = false;
+      }, 1000)
+    },
     async download() {
+      //todo aggregate all images and print
+      console.log('//todo aggregate all images and print')
+      this.downloadStarted = true;
       console.log('start download')
-      let lastZoom = this.zoom;
+      let lastZoom = parseFloat(JSON.stringify(this.zoom));
       this.zoom = 1;
       // only jpeg is supported by jsPDF
       var imgData = this.pdfCanvasRef.canvasRef.toDataURL("image/jpeg", 1.0);
       var pdf = new jsPDF();
 
-      pdf.addImage(imgData, 'JPEG', 0, 0);
-      await pdf.save("download.pdf");
-      this.zoom = lastZoom;
+      pdf.addImage(imgData, 'JPEG', 0, 0, this.pdfCanvasRef.canvasRef.width / 8, this.pdfCanvasRef.canvasRef.height / 8)
+      await pdf.save("download.pdf")
+
+      setTimeout(() => {
+        this.zoom = lastZoom;
+        this.saved = true;
+        this.downloadStarted = false;
+      }, 1000)
+
+    },
+    share() {
+      alert("Coming soon")
     }
   }
 };

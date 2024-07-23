@@ -23,6 +23,7 @@
     "i": "^0.3.7",
     "jspdf": "^2.5.1",
     "npm": "^10.8.1",
+    "print-js": "^1.6.0",
     "roboto-fontface": "*",
     "tsparticles": "^3.4.0",
     "tsparticles-engine": "^2.12.0",
